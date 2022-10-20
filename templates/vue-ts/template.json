@@ -1,0 +1,35 @@
+{
+  "package": {
+    "main": "dist/main.js",
+    "scripts": {
+      "dev": "rimraf dist && run-p dev:*",
+      "build": "run-s build:*",
+      "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
+      "dev:electron": "wait-on dist/main.js dist/index.html && electron .",
+      "build:clean": "rimraf dist release",
+      "build:electron": "cross-env NODE_ENV=\"production\" webpack --progress",
+      "build:electron-builder": "ts-node ./builder.ts"
+    },
+    "dependencies": [{ "name": "vue@next" }],
+    "devDependencies": [
+      { "name": "@types/node" },
+      { "name": "@vue/compiler-sfc" },
+      { "name": "cross-env" },
+      { "name": "css-loader" },
+      { "name": "electron" },
+      { "name": "electron-builder" },
+      { "name": "electron-nice-auto-reload" },
+      { "name": "html-webpack-plugin" },
+      { "name": "npm-run-all" },
+      { "name": "rimraf" },
+      { "name": "ts-loader" },
+      { "name": "ts-node" },
+      { "name": "typescript" },
+      { "name": "vue-loader" },
+      { "name": "vue-style-loader" },
+      { "name": "wait-on" },
+      { "name": "webpack" },
+      { "name": "webpack-cli" }
+    ]
+  }
+}

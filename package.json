@@ -1,0 +1,23 @@
+{
+  "name": "gen-electron",
+  "description": "Yet another create-electron-app.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "sprout2000",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sprout2000/create-electron-app.git"
+  },
+  "bin": "bin/cli",
+  "files": [
+    "assets",
+    "bin",
+    "lib",
+    "templates"
+  ],
+  "main": "lib/init.js",
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "yargs": "^15.4.1"
+  }
+}
