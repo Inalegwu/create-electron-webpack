@@ -6,7 +6,7 @@
   "author": "sprout2000",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sprout2000/create-electron-app.git"
+    "url": "https://github.com/sprout2000/gen-electron.git"
   },
   "bin": "bin/cli",
   "files": [
