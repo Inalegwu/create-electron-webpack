@@ -4,6 +4,14 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "sprout2000",
+  "keywords": [
+    "electron",
+    "react",
+    "vue",
+    "svelte",
+    "typescript",
+    "template"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sprout2000/gen-electron.git"
