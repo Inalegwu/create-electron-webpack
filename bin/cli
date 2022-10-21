@@ -1,35 +1,69 @@
 #!/usr/bin/env node
 
+const inquirer = require('inquirer');
 const { init } = require('../lib/init');
 
-const argv = require('yargs/yargs')(process.argv.slice(2))
-  .usage('Usage: $0 <app-name> --template <tempalte>')
-  .option('template', {
-    type: 'string',
-    alias: 't',
-    demandOption: true,
-    description: 'vanilla, react, react-ts, vue, vue-ts, svelte, svelte-ts',
-  })
-  .check((argv) => {
-    switch (argv.template) {
-      case 'vanilla':
-      case 'react':
-      case 'react-ts':
-      case 'vue':
-      case 'vue-ts':
-      case 'svelte':
-      case 'svelte-ts':
-        return true;
-      default:
-        return false;
-    }
-  })
-  .help()
-  .locale('en').argv;
+const questions = [
+  {
+    type: 'input',
+    name: 'project',
+    message: 'Project name:',
+    default() {
+      return 'electron-project';
+    },
+  },
+  {
+    type: 'list',
+    name: 'template',
+    message: 'Select a framework',
+    choices: [
+      'vanilla',
+      'react',
+      'react-ts',
+      'vue',
+      'vue-ts',
+      'svelte',
+      'svelte-ts',
+    ],
+  },
+];
 
-if (argv._.length === 0 || argv._.length >= 2 || argv._[0].startsWith('-')) {
-  console.log('You must specify a single project name.');
-  return;
-}
+const validateTemplateName = (template) => {
+  const templates = [
+    'vanilla',
+    'react',
+    'react-ts',
+    'vue',
+    'vue-ts',
+    'svelte',
+    'svelte-ts',
+  ];
 
-init(argv._[0], argv.template);
+  return templates.includes(template) ? true : false;
+};
+
+const parseArgs = async (rawArgs) => {
+  const slicedArgs = rawArgs.slice(2);
+
+  const argv = require('yargs')(slicedArgs)
+    .usage('\nUsage: gen-electron <project-name> --template <template>')
+    .option('template', {
+      type: 'string',
+      alias: 't',
+      description: 'vanilla, react, react-ts, vue, vue-ts, svelte, svelte-ts',
+    })
+    .help()
+    .locale('en').argv;
+
+  if (!validateTemplateName(argv.template) || argv._.length === 0) {
+    const result = await inquirer.prompt(questions);
+    return [result.template, result.project];
+  } else {
+    return [argv.template, argv._[0]];
+  }
+};
+
+(async () => {
+  const args = await parseArgs(process.argv);
+  await init(args[1], args[0]);
+})();

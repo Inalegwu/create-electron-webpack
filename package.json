@@ -26,6 +26,7 @@
   "main": "lib/init.js",
   "dependencies": {
     "fs-extra": "^9.0.1",
+    "inquirer": "^8.0.0",
     "yargs": "^15.4.1"
   }
 }
