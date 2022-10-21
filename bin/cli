@@ -15,7 +15,7 @@ const questions = [
   {
     type: 'list',
     name: 'template',
-    message: 'Select a framework',
+    message: 'Select a framework:',
     choices: [
       'vanilla',
       'react',
