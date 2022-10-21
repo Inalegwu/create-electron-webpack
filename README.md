@@ -1,5 +1,9 @@
 # <img width="48" src="https://user-images.githubusercontent.com/52094761/196643273-c484e7f9-ad4b-432a-91a6-63fd22203ded.svg" /> gen-electron
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/sprout2000/gen-electron)
+![GitHub package.json dynamic](https://img.shields.io/github/package-json/keywords/sprout2000/gen-electron)
+![npm](https://img.shields.io/npm/dt/gen-electron)
+
 Yet another create-electron-app.
 
 ## :flight_departure: Getting Started
