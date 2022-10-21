@@ -8,7 +8,7 @@ Yet another create-electron-app.
 npx gen-electron my-app --template react
 ```
 
-### :clipboard: templates
+## :clipboard: Templates
 
 | JavaScript | TypeScript  |
 | :--------: | :---------: |
@@ -28,6 +28,14 @@ npx gen-electron my-app --template react
 # on production
 % npm run build
 ```
+
+## :green_book: Options
+
+| option               | description         |
+| :------------------- | :------------------ |
+| `--version`          | Show version number |
+| `--template` or `-t` | Set the template    |
+| `--help`             | Show help           |
 
 ## :copyright: Copyright
 
