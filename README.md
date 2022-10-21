@@ -8,6 +8,11 @@ Yet another create-electron-app.
 npx gen-electron my-app --template react
 ```
 
+- Supports hot reload functionality
+- Available in 7 flavors
+- No redundant samples and settings
+- Customizable as you like
+
 ## :clipboard: Templates
 
 | JavaScript | TypeScript  |
