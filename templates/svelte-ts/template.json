@@ -13,7 +13,6 @@
     "dependencies": [{ "name": "svelte" }],
     "devDependencies": [
       { "name": "@types/node" },
-      { "name": "babel-loader" },
       { "name": "cross-env" },
       { "name": "css-loader" },
       { "name": "electron" },
