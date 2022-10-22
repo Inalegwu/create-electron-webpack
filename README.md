@@ -32,10 +32,10 @@ npx gen-electron my-app --template react
 % cd my-app
 
 # on development
-% npm run dev
+% npm run dev  # or 'yarn dev'
 
 # on production
-% npm run build
+% npm run build  # or 'yarn build'
 ```
 
 ## :green_book: Options
