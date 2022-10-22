@@ -12,8 +12,6 @@ Yet another create-electron-app.
 npx gen-electron my-app --template react
 ```
 
-**`Usage: gen-electron <project-name> --template <template> [--yarn]`**
-
 - Supports hot reload functionality
 - Available in 7 flavors
 - No redundant samples and settings
@@ -48,6 +46,8 @@ npx gen-electron my-app --template react
 | `--template`, `-t` | Select a framework                 |
 | `--yarn`, `-y`     | Set this option if you prefer yarn |
 | `--help`           | Show help                          |
+
+_NOTE: Yarn@v2+ is not supported._
 
 ## :copyright: Copyright
 
