@@ -13,7 +13,7 @@ npx gen-electron my-app --template react
 ```
 
 - Supports hot reload functionality
-- Available in 7 flavors
+- Available in 8 flavors
 - No redundant samples and settings
 - Customizable as you like
 
@@ -21,7 +21,7 @@ npx gen-electron my-app --template react
 
 | JavaScript | TypeScript  |
 | :--------: | :---------: |
-| `vanilla`  |      -      |
+| `vanilla`  |  `webpack`  |
 |  `react`   | `react-ts`  |
 |   `vue`    |  `vue-ts`   |
 |  `svelte`  | `svelte-ts` |
