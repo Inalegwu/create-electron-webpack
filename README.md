@@ -12,6 +12,8 @@ Yet another create-electron-app.
 npx gen-electron my-app --template react
 ```
 
+**`Usage: gen-electron <project-name> --template <template> [--yarn]`**
+
 - Supports hot reload functionality
 - Available in 7 flavors
 - No redundant samples and settings
