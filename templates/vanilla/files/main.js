@@ -4,7 +4,7 @@ const path = require('path');
 
 if (process.env.NODE_ENV === 'development') {
   require('electron-nice-auto-reload')({
-    rootPath: path.join(process.cwd(), 'dist'),
+    rootPath: process.cwd(),
     rules: [{ action: 'app.relaunch' }],
   });
 }
