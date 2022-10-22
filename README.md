@@ -40,14 +40,14 @@ npx gen-electron my-app --template react
 
 ## :green_book: Options
 
-| option             | description                        |
-| :----------------- | :--------------------------------- |
-| `--version`        | Show version number                |
-| `--template`, `-t` | Select a framework                 |
-| `--yarn`, `-y`     | Set this option if you prefer yarn |
-| `--help`           | Show help                          |
+| option             | description                          |
+| :----------------- | :----------------------------------- |
+| `--version`        | Show version number                  |
+| `--template`, `-t` | Select a framework                   |
+| `--yarn`, `-y`     | Set this option if you prefer `yarn` |
+| `--help`           | Show help                            |
 
-_NOTE: Yarn@v2+ is not supported._
+_NOTE: `Yarn@v2+` is not supported._
 
 ## :copyright: Copyright
 
