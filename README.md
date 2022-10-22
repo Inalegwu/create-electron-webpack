@@ -40,11 +40,12 @@ npx gen-electron my-app --template react
 
 ## :green_book: Options
 
-| option               | description         |
-| :------------------- | :------------------ |
-| `--version`          | Show version number |
-| `--template` or `-t` | Set the template    |
-| `--help`             | Show help           |
+| option             | description                        |
+| :----------------- | :--------------------------------- |
+| `--version`        | Show version number                |
+| `--template`, `-t` | Select a framework                 |
+| `--yarn`, `-y`     | Set this option if you prefer yarn |
+| `--help`           | Show help                          |
 
 ## :copyright: Copyright
 
