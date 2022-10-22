@@ -14,6 +14,12 @@ const questions = [
   },
   {
     type: 'list',
+    name: 'yarn',
+    message: 'Which package manager do you prefer?:',
+    choices: ['npm', 'yarn'],
+  },
+  {
+    type: 'list',
     name: 'template',
     message: 'Select a framework:',
     choices: [
@@ -46,24 +52,32 @@ const parseArgs = async (rawArgs) => {
   const slicedArgs = rawArgs.slice(2);
 
   const argv = require('yargs')(slicedArgs)
-    .usage('\nUsage: gen-electron <project-name> --template <template>')
+    .usage(
+      '\nUsage: gen-electron <project-name> --template <template> [--yarn]'
+    )
     .option('template', {
       type: 'string',
       alias: 't',
       description: 'vanilla, react, react-ts, vue, vue-ts, svelte, svelte-ts',
+    })
+    .option('yarn', {
+      type: 'boolean',
+      alias: 'y',
+      description: 'Set this option if you prefer yarn',
     })
     .help()
     .locale('en').argv;
 
   if (!validateTemplateName(argv.template) || argv._.length === 0) {
     const result = await inquirer.prompt(questions);
-    return [result.template, result.project];
+    const yarn = result.yarn === 'yarn';
+    return [result.project, { template: result.template, yarn: yarn }];
   } else {
-    return [argv.template, argv._[0]];
+    return [argv._[0], { template: argv.template, yarn: argv.yarn }];
   }
 };
 
 (async () => {
   const args = await parseArgs(process.argv);
-  await init(args[1], args[0]);
+  await init(args[0], { template: args[1].template, yarn: args[1].yarn });
 })();
