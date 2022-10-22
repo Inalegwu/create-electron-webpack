@@ -3,6 +3,17 @@
 const inquirer = require('inquirer');
 const { init } = require('../lib/init');
 
+const templates = [
+  'vanilla',
+  'webpack',
+  'react',
+  'react-ts',
+  'vue',
+  'vue-ts',
+  'svelte',
+  'svelte-ts',
+];
+
 const questions = [
   {
     type: 'input',
@@ -22,29 +33,11 @@ const questions = [
     type: 'list',
     name: 'template',
     message: 'Select a framework:',
-    choices: [
-      'vanilla',
-      'react',
-      'react-ts',
-      'vue',
-      'vue-ts',
-      'svelte',
-      'svelte-ts',
-    ],
+    choices: templates,
   },
 ];
 
 const validateTemplateName = (template) => {
-  const templates = [
-    'vanilla',
-    'react',
-    'react-ts',
-    'vue',
-    'vue-ts',
-    'svelte',
-    'svelte-ts',
-  ];
-
   return templates.includes(template) ? true : false;
 };
 
@@ -58,7 +51,8 @@ const parseArgs = async (rawArgs) => {
     .option('template', {
       type: 'string',
       alias: 't',
-      description: 'vanilla, react, react-ts, vue, vue-ts, svelte, svelte-ts',
+      description:
+        'vanilla, webpack, react, react-ts, vue, vue-ts, svelte, svelte-ts',
     })
     .option('yarn', {
       type: 'boolean',
