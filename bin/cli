@@ -3,17 +3,6 @@
 const inquirer = require('inquirer');
 const { init } = require('../lib/init');
 
-const templates = [
-  'vanilla',
-  'webpack',
-  'react',
-  'react-ts',
-  'vue',
-  'vue-ts',
-  'svelte',
-  'svelte-ts',
-];
-
 const questions = [
   {
     type: 'input',
@@ -25,19 +14,36 @@ const questions = [
   },
   {
     type: 'list',
+    name: 'template',
+    message: 'Select a framework:',
+    choices: ['vanilla', 'react', 'vue', 'svelte'],
+  },
+  {
+    type: 'list',
+    name: 'variant',
+    message: 'Select a variant:',
+    choices: ['JavaScript', 'TypeScript'],
+  },
+  {
+    type: 'list',
     name: 'yarn',
     message: 'Which package manager do you prefer?:',
     choices: ['npm', 'yarn'],
   },
-  {
-    type: 'list',
-    name: 'template',
-    message: 'Select a framework:',
-    choices: templates,
-  },
 ];
 
 const validateTemplateName = (template) => {
+  const templates = [
+    'vanilla',
+    'vanilla-ts',
+    'react',
+    'react-ts',
+    'vue',
+    'vue-ts',
+    'svelte',
+    'svelte-ts',
+  ];
+
   return templates.includes(template) ? true : false;
 };
 
@@ -65,7 +71,12 @@ const parseArgs = async (rawArgs) => {
   if (!validateTemplateName(argv.template) || argv._.length === 0) {
     const result = await inquirer.prompt(questions);
     const yarn = result.yarn === 'yarn';
-    return [result.project, { template: result.template, yarn: yarn }];
+    const template =
+      result.variant === 'JavaScript'
+        ? `${result.template}`
+        : `${result.template}-ts`;
+
+    return [result.project, { template, yarn }];
   } else {
     return [argv._[0], { template: argv.template, yarn: argv.yarn }];
   }
