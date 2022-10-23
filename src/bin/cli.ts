@@ -1,38 +1,50 @@
 #!/usr/bin/env node
 
-const inquirer = require('inquirer');
-const { init } = require('../lib/init');
+import inquirer, {
+  InputQuestionOptions,
+  ListQuestionOptions,
+  QuestionCollection,
+} from 'inquirer';
+import { init } from '../lib/init';
 
-const questions = [
-  {
-    type: 'input',
-    name: 'project',
-    message: 'Project name:',
-    default() {
-      return 'electron-project';
-    },
+const projectInput: InputQuestionOptions = {
+  type: 'input',
+  name: 'project',
+  message: 'Project name:',
+  default() {
+    return 'electron-project';
   },
-  {
-    type: 'list',
-    name: 'template',
-    message: 'Select a framework:',
-    choices: ['vanilla', 'react', 'vue', 'svelte'],
-  },
-  {
-    type: 'list',
-    name: 'variant',
-    message: 'Select a variant:',
-    choices: ['JavaScript', 'TypeScript'],
-  },
-  {
-    type: 'list',
-    name: 'yarn',
-    message: 'Which package manager do you prefer?:',
-    choices: ['npm', 'yarn'],
-  },
+};
+
+const templateList: ListQuestionOptions = {
+  type: 'list',
+  name: 'template',
+  message: 'Select a framework:',
+  choices: ['vanilla', 'react', 'vue', 'svelte'],
+};
+
+const variantList: ListQuestionOptions = {
+  type: 'list',
+  name: 'variant',
+  message: 'Select a variant:',
+  choices: ['JavaScript', 'TypeScript'],
+};
+
+const cmdList: ListQuestionOptions = {
+  type: 'list',
+  name: 'yarn',
+  message: 'Which package manager do you prefer?:',
+  choices: ['npm', 'yarn'],
+};
+
+const questions: QuestionCollection = [
+  projectInput,
+  templateList,
+  variantList,
+  cmdList,
 ];
 
-const validateTemplateName = (template) => {
+const validateTemplateName = (template: string) => {
   const templates = [
     'vanilla',
     'vanilla-ts',
@@ -47,7 +59,7 @@ const validateTemplateName = (template) => {
   return templates.includes(template) ? true : false;
 };
 
-const parseArgs = async (rawArgs) => {
+const parseArgs = async (rawArgs: string[]) => {
   const slicedArgs = rawArgs.slice(2);
 
   const argv = require('yargs')(slicedArgs)

@@ -1,9 +1,13 @@
-const fs = require('fs-extra');
+import fs from 'fs-extra';
+import path from 'node:path';
+import child_process from 'node:child_process';
 
-const path = require('node:path');
-const child_process = require('node:child_process');
+type Options = {
+  yarn?: boolean;
+  template: string;
+};
 
-const init = async (projectName, options = {}) => {
+export const init = async (projectName: string, options: Options) => {
   const { yarn, template } = options;
 
   // commands
@@ -24,10 +28,10 @@ const init = async (projectName, options = {}) => {
   }
 
   // assets
-  const assetsDir = path.join(__dirname, '..', 'assets');
+  const assetsDir = path.resolve(__dirname, '../../assets');
 
   // template
-  const templateDir = path.join(__dirname, '..', 'templates', `${template}`);
+  const templateDir = path.resolve(__dirname, `../../templates/${template}`);
   if (!fs.existsSync(templateDir)) {
     throw new Error(`Template "${template}" not found.`);
   }
@@ -92,5 +96,3 @@ const init = async (projectName, options = {}) => {
     stdio: 'inherit',
   });
 };
-
-exports.init = init;
