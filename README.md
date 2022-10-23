@@ -15,7 +15,22 @@ npx electron-starter
 - No redundant samples and settings
 - Customizable as you like
 
-## :clipboard: Templates
+## :green_book: Usage
+
+```sh
+Usage: electron-starter <project-name> --template <template> [--yarn]
+
+Options:
+  --version       Show version number                                  [boolean]
+  --template, -t  vanilla, vanilla-ts, react, react-ts, vue, vue-ts, svelte,
+                  svelte-ts                                            [string]
+  --yarn, -y      Set this option if you prefer yarn                   [boolean]
+  --help          Show help                                            [boolean]
+```
+
+If arguments are missing or invalid, fall back to interactive mode.
+
+- Templates
 
 | JavaScript |  TypeScript  |
 | :--------: | :----------: |
@@ -24,17 +39,7 @@ npx electron-starter
 |   `vue`    |   `vue-ts`   |
 |  `svelte`  | `svelte-ts`  |
 
-## :hammer_and_wrench: Development & Production
-
-```sh
-# on development
-% npm run dev
-
-# on production
-% npm run build
-```
-
-## :green_book: Options
+- Options
 
 | option             | description                          |
 | :----------------- | :----------------------------------- |
@@ -43,7 +48,17 @@ npx electron-starter
 | `--yarn`, `-y`     | Set this option if you prefer `yarn` |
 | `--help`           | Show help                            |
 
-_NOTE: `Yarn@v2+` is not supported._
+_NOTE: `Yarn@v2 or later` is NOT supported._
+
+## :hammer_and_wrench: Development & Production
+
+```sh
+# on development with hot reloading
+% npm run dev
+
+# on production
+% npm run build
+```
 
 ## :copyright: Copyright
 
