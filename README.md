@@ -1,8 +1,6 @@
 # <img width="48" src="https://user-images.githubusercontent.com/52094761/196643273-c484e7f9-ad4b-432a-91a6-63fd22203ded.svg" /> electron-starter
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/sprout2000/electron-starter)
 ![GitHub package.json dynamic](https://img.shields.io/github/package-json/keywords/sprout2000/electron-starter)
-![npm](https://img.shields.io/npm/dt/electron-starter)
 
 Yet another create-electron-app.
 
