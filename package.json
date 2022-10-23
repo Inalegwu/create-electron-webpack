@@ -12,6 +12,7 @@
     "typescript",
     "template"
   ],
+  "homepage": "https://github.com/sprout2000/electron-starter#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/sprout2000/electron-starter.git"
