@@ -16,16 +16,15 @@
     "type": "git",
     "url": "https://github.com/sprout2000/gen-electron.git"
   },
-  "bin": "dist/bin/cli.js",
+  "bin": {
+    "electron-starter": "bin/electron-starter"
+  },
   "files": [
     "assets",
+    "bin",
     "dist",
     "templates"
   ],
-  "scripts": {
-    "start": "tsc -w",
-    "build": "tsc"
-  },
   "dependencies": {
     "fs-extra": "^9.0.1",
     "inquirer": "^8.0.0",
