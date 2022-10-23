@@ -19,13 +19,6 @@ npx electron-starter
 
 ```sh
 Usage: electron-starter <project-name> --template <template> [--yarn]
-
-Options:
-  --version       Show version number                                  [boolean]
-  --template, -t  vanilla, vanilla-ts, react, react-ts, vue, vue-ts, svelte,
-                  svelte-ts                                            [string]
-  --yarn, -y      Set this option if you prefer yarn                   [boolean]
-  --help          Show help                                            [boolean]
 ```
 
 If arguments are missing or invalid, fall back to interactive mode.
