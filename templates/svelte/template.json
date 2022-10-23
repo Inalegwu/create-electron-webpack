@@ -3,12 +3,9 @@
     "main": "dist/main.js",
     "scripts": {
       "dev": "rimraf dist && run-p dev:*",
-      "build": "run-s build:*",
+      "build": "cross-env NODE_ENV=\"production\" webpack --progress",
       "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
-      "dev:electron": "wait-on dist/main.js dist/index.html && electron .",
-      "build:clean": "rimraf dist release",
-      "build:electron": "cross-env NODE_ENV=\"production\" webpack --progress",
-      "build:electron-builder": "node ./builder.js"
+      "dev:electron": "wait-on dist/main.js dist/index.html && electron ."
     },
     "dependencies": [{ "name": "svelte" }],
     "devDependencies": [
@@ -18,7 +15,6 @@
       { "name": "cross-env" },
       { "name": "css-loader" },
       { "name": "electron" },
-      { "name": "electron-builder" },
       { "name": "electron-nice-auto-reload" },
       { "name": "html-webpack-plugin" },
       { "name": "mini-css-extract-plugin" },

@@ -2,13 +2,11 @@
   "package": {
     "main": "main.js",
     "scripts": {
-      "dev": "cross-env NODE_ENV=\"development\" electron .",
-      "build": "node ./electron-builder.js"
+      "dev": "cross-env NODE_ENV=\"development\" electron ."
     },
     "devDependencies": [
       { "name": "cross-env" },
       { "name": "electron" },
-      { "name": "electron-builder" },
       { "name": "electron-nice-auto-reload" }
     ]
   }
