@@ -19,12 +19,12 @@ npx gen-electron my-app --template react
 
 ## :clipboard: Templates
 
-| JavaScript | TypeScript  |
-| :--------: | :---------: |
-| `vanilla`  |  `webpack`  |
-|  `react`   | `react-ts`  |
-|   `vue`    |  `vue-ts`   |
-|  `svelte`  | `svelte-ts` |
+| JavaScript |  TypeScript  |
+| :--------: | :----------: |
+| `vanilla`  | `vanilla-ts` |
+|  `react`   |  `react-ts`  |
+|   `vue`    |   `vue-ts`   |
+|  `svelte`  | `svelte-ts`  |
 
 ## :hammer_and_wrench: Development & Production
 
