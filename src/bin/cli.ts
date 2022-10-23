@@ -64,13 +64,13 @@ const parseArgs = async (rawArgs: string[]) => {
 
   const argv = require('yargs')(slicedArgs)
     .usage(
-      '\nUsage: gen-electron <project-name> --template <template> [--yarn]'
+      '\nUsage: electron-starter <project-name> --template <template> [--yarn]'
     )
     .option('template', {
       type: 'string',
       alias: 't',
       description:
-        'vanilla, webpack, react, react-ts, vue, vue-ts, svelte, svelte-ts',
+        'vanilla, vanilla-ts, react, react-ts, vue, vue-ts, svelte, svelte-ts',
     })
     .option('yarn', {
       type: 'boolean',
