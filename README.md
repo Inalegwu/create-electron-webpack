@@ -27,13 +27,11 @@ npx electron-starter
 ## :hammer_and_wrench: Development & Production
 
 ```sh
-% cd my-app
-
 # on development
-% npm run dev  # or 'yarn dev'
+% npm run dev
 
 # on production
-% npm run build  # or 'yarn build'
+% npm run build
 ```
 
 ## :green_book: Options
