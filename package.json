@@ -1,7 +1,7 @@
 {
   "name": "gen-electron",
   "description": "Yet another create-electron-app.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "author": "sprout2000",
   "keywords": [
