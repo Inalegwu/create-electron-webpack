@@ -17,7 +17,6 @@ export const init = async (projectName: string, options: Options) => {
 
   // dir paths
   const projectDir = path.join(process.cwd(), projectName);
-  const projectAssetsDir = path.join(projectDir, 'assets');
 
   // check if project dir exists
   if (fs.existsSync(projectDir)) {
@@ -28,9 +27,6 @@ export const init = async (projectName: string, options: Options) => {
     );
     throw new Error(`already exists.`);
   }
-
-  // assets
-  const assetsDir = path.resolve(__dirname, '../../assets');
 
   // template
   const templateDir = path.resolve(__dirname, `../../templates/${template}`);
@@ -49,7 +45,6 @@ export const init = async (projectName: string, options: Options) => {
 
   // copy files
   fs.copySync(path.join(templateDir, 'files'), projectDir);
-  fs.copySync(assetsDir, projectAssetsDir);
 
   // rename `gitignore` to `.gitignore`.
   const gitignorePath = path.join(projectDir, 'gitignore');
