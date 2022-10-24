@@ -10,7 +10,8 @@
     "vue",
     "svelte",
     "typescript",
-    "template"
+    "template",
+    "hot-reload"
   ],
   "homepage": "https://github.com/sprout2000/electron-starter#readme",
   "repository": {
