@@ -26,7 +26,7 @@ const questions: QuestionCollection = [
     type: 'list',
     name: 'yarn',
     message: 'Which package manager do you prefer?:',
-    choices: ['npm', 'yarn'],
+    choices: ['npm', 'yarn (v1.x only)'],
   },
 ];
 
@@ -61,14 +61,14 @@ export const cli = async (rawArgs: string[]) => {
     .option('yarn', {
       type: 'boolean',
       alias: 'y',
-      description: 'Set this option if you prefer yarn',
+      description: 'Set this option if you prefer yarn@v1.x',
     })
     .help()
     .locale('en').argv;
 
   if (!validateTemplateName(argv.template) || argv._.length === 0) {
     const result = await inquirer.prompt(questions);
-    const yarn = result.yarn === 'yarn';
+    const yarn = result.yarn.match(/^yarn/);
     const template =
       result.variant === 'JavaScript'
         ? `${result.template}`
