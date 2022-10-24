@@ -1,3 +1,4 @@
+import path from 'path';
 import yargs from 'yargs';
 import inquirer, { QuestionCollection } from 'inquirer';
 
@@ -47,6 +48,18 @@ const validateTemplateName = (template: string) => {
   return templates.includes(template) ? true : false;
 };
 
+const print = (dir: string, isYarn?: boolean) => {
+  console.log(
+    `\nScaffolding project in \x1b[33m${path.resolve(
+      process.cwd(),
+      dir
+    )}\x1b[0m...`
+  );
+  console.log('\n\x1b[32mDone. Now run:\x1b[0m');
+  console.log(`\n  cd ${dir}`);
+  console.log(`  ${isYarn ? 'yarn' : 'npm run'} dev\n`);
+};
+
 export const cli = async (rawArgs: string[]) => {
   const slicedArgs = rawArgs.slice(2);
 
@@ -81,11 +94,13 @@ export const cli = async (rawArgs: string[]) => {
         ? `${result.template}`
         : `${result.template}-ts`;
 
-    await init(result.project, { template, yarn });
+    init(result.project, { template, yarn }).then(() =>
+      print(result.project, yarn)
+    );
   } else {
-    await init(argv._[0].toString(), {
+    init(argv._[0].toString(), {
       template: argv.template,
       yarn: argv.yarn,
-    });
+    }).then(() => print(argv._[0].toString(), argv.yarn));
   }
 };
