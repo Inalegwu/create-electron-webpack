@@ -1,4 +1,6 @@
+import yargs from 'yargs';
 import inquirer, { QuestionCollection } from 'inquirer';
+
 import { init } from './lib/init';
 
 const questions: QuestionCollection = [
@@ -48,7 +50,7 @@ const validateTemplateName = (template: string) => {
 export const cli = async (rawArgs: string[]) => {
   const slicedArgs = rawArgs.slice(2);
 
-  const argv = require('yargs')(slicedArgs)
+  const argv = yargs(slicedArgs)
     .usage(
       '\nUsage: electron-starter <project-name> --template <template> [--yarn]'
     )
@@ -64,9 +66,14 @@ export const cli = async (rawArgs: string[]) => {
       description: 'Set this option if you prefer yarn@v1.x',
     })
     .help()
-    .locale('en').argv;
+    .locale('en')
+    .parseSync();
 
-  if (!validateTemplateName(argv.template) || argv._.length === 0) {
+  if (
+    !argv.template ||
+    !validateTemplateName(argv.template) ||
+    argv._.length === 0
+  ) {
     const result = await inquirer.prompt(questions);
     const yarn = result.yarn.match(/^yarn/);
     const template =
@@ -76,6 +83,9 @@ export const cli = async (rawArgs: string[]) => {
 
     await init(result.project, { template, yarn });
   } else {
-    await init(argv._[0], { template: argv.template, yarn: argv.yarn });
+    await init(argv._[0].toString(), {
+      template: argv.template,
+      yarn: argv.yarn,
+    });
   }
 };
