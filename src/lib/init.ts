@@ -22,7 +22,9 @@ export const init = async (projectName: string, options: Options) => {
   // check if project dir exists
   if (fs.existsSync(projectDir)) {
     console.error(
-      `\n"${path.basename(projectDir)}" directory already exits.\n`
+      `\n\x1b[31m"${path.basename(
+        projectDir
+      )}" directory already exits.\x1b[0m\n`
     );
     throw new Error(`already exists.`);
   }
