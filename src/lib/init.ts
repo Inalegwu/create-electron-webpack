@@ -36,6 +36,7 @@ export const init = async (projectName: string, options: Options) => {
     throw new Error(`Template "${template}" not found.`);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const templateJson = require(path.join(templateDir, 'template.json'));
 
   // init dir
@@ -65,6 +66,7 @@ export const init = async (projectName: string, options: Options) => {
   });
 
   // merge package.json
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const packageJson = require(path.join(projectDir, 'package.json'));
 
   packageJson.main = templateJson.package.main;
