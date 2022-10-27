@@ -17,7 +17,7 @@ npx electron-starter
 
 - Supports hot reload functionality
 - Available in 8 flavors
-- No redundant samples and settings (only 118 lines at minimum)
+- No redundant samples and settings (only 72 lines at minimum)
 - Customizable as you like
 
 ## :green_book: Usage
