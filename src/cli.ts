@@ -50,7 +50,7 @@ const validateTemplateName = (template: string) => {
 
 const print = (dir: string, isYarn?: boolean) => {
   console.log(
-    `\nScaffolding project in \x1b[33m${path.resolve(
+    `\nScaffolding project in \x1b[36m${path.resolve(
       process.cwd(),
       dir
     )}\x1b[0m...`
