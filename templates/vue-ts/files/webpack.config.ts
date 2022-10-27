@@ -1,4 +1,4 @@
-import { Configuration } from 'webpack';
+import { Configuration, DefinePlugin } from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
@@ -58,6 +58,10 @@ const renderer: Configuration = {
   entry: { app: './src/web/index.ts' },
   plugins: [
     new VueLoaderPlugin(),
+    new DefinePlugin({
+      __VUE_OPTIONS_API__: isDev,
+      __VUE_PROD_DEVTOOLS__: isDev,
+    }),
     new HtmlWebpackPlugin({ template: './src/web/index.html' }),
   ],
 };
