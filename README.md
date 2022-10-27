@@ -1,19 +1,23 @@
-# <img width="48" src="https://user-images.githubusercontent.com/52094761/196643273-c484e7f9-ad4b-432a-91a6-63fd22203ded.svg" /> electron-starter
+# :flight_departure: electron-starter
 
 ![GitHub package.json dynamic](https://img.shields.io/github/package-json/keywords/sprout2000/electron-starter)
 ![npm](https://img.shields.io/npm/dt/electron-starter)
 
 Yet another create-electron-app.
 
-## :flight_departure: Getting Started
+## :rocket: Getting Started
 
 ```sh
 npx electron-starter
 ```
 
+![demo](https://user-images.githubusercontent.com/52094761/198173518-e448abf5-720f-4b06-b430-07cc6a4976fd.gif)
+
+## :thumbsup: Features
+
 - Supports hot reload functionality
 - Available in 8 flavors
-- No redundant samples and settings
+- No redundant samples and settings (only 118 lines at minimum)
 - Customizable as you like
 
 ## :green_book: Usage
