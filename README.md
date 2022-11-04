@@ -58,6 +58,56 @@ _NOTE: `Yarn@v2 or later` is NOT supported._
 % npm run build
 ```
 
+## :inbox_tray: How to load developer tools (React, Vue3)
+
+I recommend [electron-devtools-installer](https://www.npmjs.com/package/electron-devtools-installer).
+
+```sh
+npm install --save-dev electron-search-devtools
+```
+
+Or you will need to install [React Devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) or [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) Google Chrome extension.
+
+- Example of using [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools):
+
+1. Install `electron-search-devtools`:
+
+```sh
+npm install --save-dev electron-search-devtools
+```
+
+2. And then, load the necessary developer tools in `src/main.js` or `src/main.ts`:
+
+```javascript
+// load `session` and `searchDevtools`
+import { BrowserWindow, app, session } from 'electron';
+import { searchDevtools } from 'electron-search-devtools';
+```
+
+```javascript
+app.whenReady().then(() => {
+  const mainWindow = new BrowserWindow({
+    webPreferences: {
+      preload: path.resolve(__dirname, 'preload.js'),
+    },
+  });
+
+  // 'REACT' or 'VUE3'
+  searchDevtools('VUE3').then((devtools) => {
+    session.defaultSession.loadExtension(devtools, { allowFileAccess: true });
+  });
+
+  mainWindow.loadFile('dist/index.html');
+  mainWindow.webContents.openDevTools({ mode: 'detach' });
+});
+```
+
+<img width="566" alt="2022-11-04-152049" src="https://user-images.githubusercontent.com/52094761/199905375-ad07c335-e776-4cee-8fac-0a929c0476e5.png">
+
+## :package: How to package your app to publish
+
+Use [electron-builder](https://www.electron.build/) or [electron-packager](https://electron.github.io/electron-packager/main/).
+
 ## :copyright: Copyright
 
 See [LICENSE.md](./LICENSE.md) file.
