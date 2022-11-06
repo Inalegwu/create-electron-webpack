@@ -1,10 +1,12 @@
 import path from 'path';
 import { app, BrowserWindow } from 'electron';
 
+import { reloader } from './reloader';
+
 if (process.env.NODE_ENV === 'development') {
-  require('electron-nice-auto-reload')({
-    rootPath: path.join(process.cwd(), 'dist'),
-    rules: [{ action: 'app.relaunch' }],
+  reloader({
+    mainPaths: ['dist/main.js', 'dist/preload.js'],
+    rendererPaths: ['dist/index.html', 'dist/app.js'],
   });
 }
 
@@ -16,7 +18,7 @@ app.whenReady().then(() => {
   });
 
   mainWindow.loadFile('dist/index.html');
-  // mainWindow.webContents.openDevTools({ mode: 'detach' });
+  mainWindow.webContents.openDevTools({ mode: 'detach' });
 });
 
 app.on('window-all-closed', () => app.quit());

@@ -8,11 +8,12 @@
       "dev:electron": "wait-on dist/main.js dist/index.html && electron ."
     },
     "devDependencies": [
+      { "name": "@types/chokidar" },
       { "name": "@types/node" },
+      { "name": "chokidar" },
       { "name": "cross-env" },
       { "name": "css-loader" },
       { "name": "electron" },
-      { "name": "electron-nice-auto-reload" },
       { "name": "html-webpack-plugin" },
       { "name": "mini-css-extract-plugin" },
       { "name": "npm-run-all" },

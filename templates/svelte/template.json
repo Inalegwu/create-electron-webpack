@@ -12,6 +12,7 @@
       { "name": "@babel/core" },
       { "name": "@babel/preset-env" },
       { "name": "babel-loader" },
+      { "name": "chokidar" },
       { "name": "cross-env" },
       { "name": "css-loader" },
       { "name": "electron" },

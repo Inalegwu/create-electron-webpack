@@ -5,9 +5,9 @@
       "dev": "cross-env NODE_ENV=\"development\" electron ."
     },
     "devDependencies": [
+      { "name": "chokidar" },
       { "name": "cross-env" },
-      { "name": "electron" },
-      { "name": "electron-nice-auto-reload" }
+      { "name": "electron" }
     ]
   }
 }

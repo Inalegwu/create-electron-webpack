@@ -1,10 +1,12 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+const { reloader } = require('./reloader');
+
 if (process.env.NODE_ENV === 'development') {
-  require('electron-nice-auto-reload')({
-    rootPath: process.cwd(),
-    rules: [{ action: 'app.relaunch' }],
+  reloader({
+    mainPaths: ['main.js', 'preload.js'],
+    rendererPaths: ['index.html', 'renderer.js'],
   });
 }
 
