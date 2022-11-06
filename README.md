@@ -60,15 +60,30 @@ _NOTE: `Yarn@v2 or later` is NOT supported._
 
 ## :inbox_tray: How to load developer tools (React, Vue3)
 
+### Use electron-devtools-installer
+
 I recommend [electron-devtools-installer](https://www.npmjs.com/package/electron-devtools-installer).
 
 ```sh
-npm install --save-dev electron-search-devtools
+npm install --save-dev electron-devtools-installer
 ```
 
-Or you will need to install [React Devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) or [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) Google Chrome extension.
+```javascript
+// Example for Vue3
+import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 
-- Example of using [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools):
+app.whenReady().then(() => {
+  installExtension(VUEJS3_DEVTOOLS, {
+    loadExtensionOptions: { allowFileAccess: true },
+  }).then(() => mainWindow.webContents.openDevTools());
+});
+```
+
+### Manual
+
+Or you will need to install [React Devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) or [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) Google Chrome extension manually.
+
+_Example if you prefer [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools):_
 
 1. Install `electron-search-devtools`:
 
@@ -82,22 +97,14 @@ npm install --save-dev electron-search-devtools
 // load `session` and `searchDevtools`
 import { BrowserWindow, app, session } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
-```
 
-```javascript
 app.whenReady().then(() => {
-  const mainWindow = new BrowserWindow({
-    webPreferences: {
-      preload: path.resolve(__dirname, 'preload.js'),
-    },
-  });
-
   // 'REACT' or 'VUE3'
   searchDevtools('VUE3').then((devtools) => {
+    // 'allowFileAccess' is required
     session.defaultSession.loadExtension(devtools, { allowFileAccess: true });
   });
-
-  mainWindow.loadFile('dist/index.html');
+  // open devtools in 'detach' mode
   mainWindow.webContents.openDevTools({ mode: 'detach' });
 });
 ```
