@@ -9,7 +9,6 @@
     },
     "dependencies": [{ "name": "svelte" }],
     "devDependencies": [
-      { "name": "@types/chokidar" },
       { "name": "@types/node" },
       { "name": "chokidar" },
       { "name": "cross-env" },

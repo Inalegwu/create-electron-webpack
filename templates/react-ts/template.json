@@ -9,7 +9,6 @@
     },
     "dependencies": [{ "name": "react" }, { "name": "react-dom" }],
     "devDependencies": [
-      { "name": "@types/chokidar" },
       { "name": "@types/node" },
       { "name": "@types/react" },
       { "name": "@types/react-dom" },

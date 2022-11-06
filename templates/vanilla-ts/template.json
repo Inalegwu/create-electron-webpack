@@ -8,7 +8,6 @@
       "dev:electron": "wait-on dist/main.js dist/index.html && electron ."
     },
     "devDependencies": [
-      { "name": "@types/chokidar" },
       { "name": "@types/node" },
       { "name": "chokidar" },
       { "name": "cross-env" },

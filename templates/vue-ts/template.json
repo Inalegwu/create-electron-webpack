@@ -9,7 +9,6 @@
     },
     "dependencies": [{ "name": "vue@next" }],
     "devDependencies": [
-      { "name": "@types/chokidar" },
       { "name": "@types/node" },
       { "name": "@vue/compiler-sfc" },
       { "name": "chokidar" },
