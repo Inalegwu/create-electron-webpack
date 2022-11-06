@@ -13,7 +13,7 @@ const common: Configuration = {
     alias: {
       svelte: path.resolve('node_modules', 'svelte'),
     },
-    extensions: ['.mjs', '.js', '.svelte', '.json'],
+    extensions: ['.mjs', '.js', '.ts', '.svelte', '.json'],
     mainFields: ['svelte', 'browser', 'module', 'main'],
   },
   output: {
@@ -23,7 +23,7 @@ const common: Configuration = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
         loader: 'ts-loader',
       },
