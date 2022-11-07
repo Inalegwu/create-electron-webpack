@@ -60,9 +60,7 @@ _NOTE: `Yarn@v2 or later` is NOT supported._
 
 ## :inbox_tray: How to load developer tools (React, Vue3)
 
-### Use electron-devtools-installer
-
-I recommend [electron-devtools-installer](https://www.npmjs.com/package/electron-devtools-installer).
+[electron-devtools-installer](https://www.npmjs.com/package/electron-devtools-installer) is recommended.
 
 ```sh
 npm install --save-dev electron-devtools-installer
@@ -79,11 +77,11 @@ app.whenReady().then(() => {
 });
 ```
 
-### Manual
+### Manual loading
 
 Or you will need to install [React Devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) or [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) Google Chrome extension manually.
 
-_Example if you prefer [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools):_
+_Example of when you prefer to use [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools) to load already installed devtools:_
 
 1. Install `electron-search-devtools`:
 
