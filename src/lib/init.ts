@@ -3,17 +3,17 @@ import path from 'node:path';
 import child_process from 'node:child_process';
 
 type Options = {
-  yarn?: boolean;
+  manager?: Manager | string;
   template: string;
 };
 
 export const init = async (projectName: string, options: Options) => {
-  const { yarn, template } = options;
+  const { manager, template } = options;
 
   // commands
-  const cmd = yarn ? 'yarn' : 'npm';
-  const deps = yarn ? 'add' : 'install';
-  const devDeps = yarn ? 'add -D' : 'install -D';
+  const cmd = manager || 'npm';
+  const deps = manager === 'yarn' ? 'add' : 'install';
+  const devDeps = manager === 'yarn' ? 'add -D' : 'install -D';
 
   // dir paths
   const projectDir = path.join(process.cwd(), projectName);
@@ -38,8 +38,9 @@ export const init = async (projectName: string, options: Options) => {
   const templateJson = require(path.join(templateDir, 'template.json'));
 
   // init dir
+  const initCmd = manager === 'pnpm' ? 'init' : 'init -y';
   fs.mkdirSync(projectDir);
-  child_process.execSync(`${cmd} init -y`, {
+  child_process.execSync(`${cmd} ${initCmd}`, {
     cwd: projectDir,
   });
 

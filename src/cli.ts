@@ -27,9 +27,9 @@ const questions: QuestionCollection = [
   },
   {
     type: 'list',
-    name: 'yarn',
+    name: 'manager',
     message: 'Which package manager do you prefer?:',
-    choices: ['npm', 'yarn (v1.x only)'],
+    choices: ['npm', 'pnpm', 'yarn (v1.x only)'],
   },
 ];
 
@@ -48,16 +48,18 @@ const validateTemplateName = (template: string) => {
   return templates.includes(template) ? true : false;
 };
 
-const print = (dir: string, isYarn?: boolean) => {
+const print = (dir: string, manager?: Manager) => {
+  const cmd = manager || 'npm';
+
   console.log(
     `\nScaffolding project in \x1b[36m${path.resolve(
       process.cwd(),
       dir
     )}\x1b[0m...`
   );
-  console.log('\n\x1b[32mDone. Now run:\x1b[0m');
+  console.log('\nDone. Now run:');
   console.log(`\n  cd ${dir}`);
-  console.log(`  ${isYarn ? 'yarn' : 'npm run'} dev\n`);
+  console.log(`  ${cmd === 'yarn' ? 'yarn' : `${cmd} run`} dev\n`);
 };
 
 export const cli = async (rawArgs: string[]) => {
@@ -73,10 +75,10 @@ export const cli = async (rawArgs: string[]) => {
       description:
         'vanilla, vanilla-ts, react, react-ts, vue, vue-ts, svelte, svelte-ts',
     })
-    .option('yarn', {
-      type: 'boolean',
-      alias: 'y',
-      description: 'Set this option if you prefer yarn@v1.x',
+    .option('manager', {
+      type: 'string',
+      alias: 'm',
+      description: 'npm, pnpm, yarn',
     })
     .help()
     .locale('en')
@@ -88,19 +90,19 @@ export const cli = async (rawArgs: string[]) => {
     argv._.length === 0
   ) {
     const result = await inquirer.prompt(questions);
-    const yarn = result.yarn.match(/^yarn/);
+    const manager = result.manager || 'npm';
     const template =
       result.variant === 'JavaScript'
         ? `${result.template}`
         : `${result.template}-ts`;
 
-    init(result.project, { template, yarn }).then(() =>
-      print(result.project, yarn)
+    init(result.project, { template, manager }).then(() =>
+      print(result.project, manager)
     );
   } else {
     init(argv._[0].toString(), {
       template: argv.template,
-      yarn: argv.yarn,
-    }).then(() => print(argv._[0].toString(), argv.yarn));
+      manager: argv.manager || 'npm',
+    }).then(() => print(argv._[0].toString(), argv.manager));
   }
 };
