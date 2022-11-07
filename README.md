@@ -23,7 +23,7 @@ npx electron-starter
 ## :green_book: Usage
 
 ```sh
-Usage: electron-starter <project-name> --template <template> [--yarn]
+Usage: electron-starter <project-name> --template <template> [--manager <package manager>]
 ```
 
 If arguments are missing or invalid, fall back to interactive mode.
@@ -39,12 +39,12 @@ If arguments are missing or invalid, fall back to interactive mode.
 
 - Options
 
-| option             | description                          |
-| :----------------- | :----------------------------------- |
-| `--version`        | Show version number                  |
-| `--template`, `-t` | Select a framework                   |
-| `--yarn`, `-y`     | Set this option if you prefer `yarn` |
-| `--help`           | Show help                            |
+| option             | description                                                |
+| :----------------- | :--------------------------------------------------------- |
+| `--version`        | Show version number                                        |
+| `--template`, `-t` | Select a template                                          |
+| `--manager`, `-m`  | Select a package manager: `npm`(_default_), `pnpm`, `yarn` |
+| `--help`           | Show help                                                  |
 
 _NOTE: `Yarn@v2 or later` is NOT supported._
 
