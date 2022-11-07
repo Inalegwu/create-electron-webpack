@@ -18,7 +18,7 @@ app.whenReady().then(() => {
   });
 
   mainWindow.loadFile('dist/index.html');
-  mainWindow.webContents.openDevTools({ mode: 'detach' });
+  // mainWindow.webContents.openDevTools({ mode: 'detach' });
 });
 
 app.on('window-all-closed', () => app.quit());
