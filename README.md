@@ -11,7 +11,7 @@ Yet another create-electron-app.
 npx electron-starter
 ```
 
-![demo](https://user-images.githubusercontent.com/52094761/198173518-e448abf5-720f-4b06-b430-07cc6a4976fd.gif)
+![demo](https://user-images.githubusercontent.com/52094761/200250362-2b3b7c3c-ad2b-4100-bf07-378fb7ebe627.gif)
 
 ## :thumbsup: Features
 
