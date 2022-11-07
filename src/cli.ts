@@ -29,7 +29,7 @@ const questions: QuestionCollection = [
     type: 'list',
     name: 'manager',
     message: 'Which package manager do you prefer?:',
-    choices: ['npm', 'pnpm', 'yarn (v1.x only)'],
+    choices: ['npm', 'pnpm', 'yarn'],
   },
 ];
 
