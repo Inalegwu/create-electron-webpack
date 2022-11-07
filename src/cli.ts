@@ -45,7 +45,12 @@ const validateTemplateName = (template: string) => {
     'svelte-ts',
   ];
 
-  return templates.includes(template) ? true : false;
+  return templates.includes(template);
+};
+
+const validateManager = (pkg?: string) => {
+  const pkgManager = ['npm', 'pnpm', 'yarn'];
+  return pkg ? pkgManager.includes(pkg) : true;
 };
 
 const print = (dir: string, manager?: Manager) => {
@@ -87,6 +92,7 @@ export const cli = async (rawArgs: string[]) => {
   if (
     !argv.template ||
     !validateTemplateName(argv.template) ||
+    !validateManager(argv.manager) ||
     argv._.length === 0
   ) {
     const result = await inquirer.prompt(questions);
