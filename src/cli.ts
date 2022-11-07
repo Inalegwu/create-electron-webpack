@@ -67,7 +67,7 @@ export const cli = async (rawArgs: string[]) => {
 
   const argv = yargs(slicedArgs)
     .usage(
-      '\nUsage: electron-starter <project-name> --template <template> [--yarn]'
+      '\nUsage: electron-starter <project-name> --template <template> [--manager <package manager>]'
     )
     .option('template', {
       type: 'string',
