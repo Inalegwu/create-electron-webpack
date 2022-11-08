@@ -39,23 +39,19 @@ const reloader = (options) => {
     }
   };
 
-  watch(mainPaths, { ignored: ignoreFiles, alwaysStat: true }).on(
-    'change',
-    (_filepath, stat) => {
-      if (stat) {
-        relaunchApp();
-      }
-    }
-  );
+  watch(mainPaths, {
+    ignored: ignoreFiles,
+    alwaysStat: true,
+  }).on('change', (_filepath, stat) => {
+    if (stat) relaunchApp();
+  });
 
-  watch(rendererPaths, { ignored: ignoreFiles, alwaysStat: true }).on(
-    'change',
-    (_filepath, stat) => {
-      if (stat) {
-        reloadWeb();
-      }
-    }
-  );
+  watch(rendererPaths, {
+    ignored: ignoreFiles,
+    alwaysStat: true,
+  }).on('change', (_filepath, stat) => {
+    if (stat) reloadWeb();
+  });
 };
 
 exports.reloader = reloader;
