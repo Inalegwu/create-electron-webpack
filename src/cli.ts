@@ -64,7 +64,7 @@ const print = (dir: string, manager?: Manager) => {
   );
   console.log('\nDone. Now run:');
   console.log(`\n  cd ${dir}`);
-  console.log(`  ${cmd === 'yarn' ? 'yarn' : `${cmd} run`} dev\n`);
+  console.log(`  ${cmd === 'npm' ? 'npm run' : cmd} dev\n`);
 };
 
 export const cli = async (rawArgs: string[]) => {
