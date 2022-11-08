@@ -28,7 +28,7 @@ Usage: electron-starter <project-name> --template <template> [--manager <package
 
 If arguments are missing or invalid, fall back to interactive mode.
 
-- Templates
+### Templates
 
 | JavaScript |  TypeScript  |
 | :--------: | :----------: |
@@ -37,7 +37,7 @@ If arguments are missing or invalid, fall back to interactive mode.
 |   `vue`    |   `vue-ts`   |
 |  `svelte`  | `svelte-ts`  |
 
-- Options
+### Options
 
 | option             | description                                                |
 | :----------------- | :--------------------------------------------------------- |
