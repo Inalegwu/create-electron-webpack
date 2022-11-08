@@ -16,8 +16,8 @@ npx electron-starter
 ## :thumbsup: Features
 
 - Supports hot reloading in both the main and renderer processes.
-- Available in 8 flavors.
-- No redundant samples and settings (only 72 lines at minimum).
+- Available in [8 flavors](https://github.com/sprout2000/electron-starter#templates).
+- No redundant samples and settings.
 - Customizable as you like.
 
 ## :green_book: Usage
