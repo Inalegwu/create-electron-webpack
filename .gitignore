@@ -1,3 +1,6 @@
 .DS_Store
+.eslint*
+.prettier*
+
 dist
 node_modules
