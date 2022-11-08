@@ -81,7 +81,7 @@ app.whenReady().then(() => {
 
 Or you will need to install [React Devtools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) or [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) Google Chrome extension manually.
 
-_Example of when you prefer to use [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools) to load already installed devtools:_
+_Example in the case that you prefer [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools) to load already installed devtools:_
 
 1. Install `electron-search-devtools`:
 
@@ -93,7 +93,7 @@ npm install --save-dev electron-search-devtools
 
 ```javascript
 // load `session` and `searchDevtools`
-import { BrowserWindow, app, session } from 'electron';
+import { app, session } from 'electron';
 import { searchDevtools } from 'electron-search-devtools';
 
 app.whenReady().then(() => {
@@ -102,12 +102,10 @@ app.whenReady().then(() => {
     // 'allowFileAccess' is required
     session.defaultSession.loadExtension(devtools, { allowFileAccess: true });
   });
-  // open devtools in 'detach' mode
-  mainWindow.webContents.openDevTools({ mode: 'detach' });
 });
 ```
 
-<img width="566" alt="2022-11-04-152049" src="https://user-images.githubusercontent.com/52094761/199905375-ad07c335-e776-4cee-8fac-0a929c0476e5.png">
+<img width="480" alt="Vue.js devtools" src="https://user-images.githubusercontent.com/52094761/200508222-d0c851a4-d578-463f-8bd2-6d1e4bcb87bd.png">
 
 ## :package: How to package your app to publish
 
