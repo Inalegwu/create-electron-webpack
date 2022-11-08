@@ -1,1 +1,1 @@
-declare type Manager = 'npm' | 'yarn' | 'pnpm' | string;
+declare type Manager = 'npm' | 'yarn' | 'pnpm';

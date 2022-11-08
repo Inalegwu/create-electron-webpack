@@ -96,7 +96,7 @@ export const cli = async (rawArgs: string[]) => {
     argv._.length === 0
   ) {
     const result = await inquirer.prompt(questions);
-    const manager = result.manager || 'npm';
+    const manager = result.manager as Manager;
     const template =
       result.variant === 'JavaScript'
         ? `${result.template}`
@@ -109,6 +109,9 @@ export const cli = async (rawArgs: string[]) => {
     init(argv._[0].toString(), {
       template: argv.template,
       manager: argv.manager || 'npm',
-    }).then(() => print(argv._[0].toString(), argv.manager));
+    }).then(() => {
+      const manager = argv.manager || 'npm';
+      print(argv._[0].toString(), manager as Manager);
+    });
   }
 };
