@@ -1,6 +1,5 @@
 # :flight_departure: electron-starter
 
-![GitHub package.json dynamic](https://img.shields.io/github/package-json/keywords/sprout2000/electron-starter)
 ![npm](https://img.shields.io/npm/dt/electron-starter)
 
 Yet another create-electron-app.
