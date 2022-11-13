@@ -74,11 +74,8 @@ export const init = async (projectName: string, options: Options) => {
   const templateDeps = templateJson.package.dependencies || [];
   const templateDevDeps = templateJson.package.devDependencies || [];
 
-  const combinedDependencies = [...templateDeps];
-  const combinedDevDependencies = [...templateDevDeps];
-
-  const dependencies = combinedDependencies.map(({ name }) => name);
-  const devDependencies = combinedDevDependencies.map(({ name }) => name);
+  const dependencies = [...templateDeps].map(({ name }) => name);
+  const devDependencies = [...templateDevDeps].map(({ name }) => name);
 
   if (!template.match(/^vanilla/)) {
     child_process.execSync(`${cmd} ${depsCmd} ${dependencies.join(' ')}`, {
