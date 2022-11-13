@@ -59,10 +59,13 @@ const renderer: Configuration = {
   plugins: [
     new VueLoaderPlugin(),
     new DefinePlugin({
-      __VUE_OPTIONS_API__: isDev,
-      __VUE_PROD_DEVTOOLS__: isDev,
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: true,
     }),
-    new HtmlWebpackPlugin({ template: './src/web/index.html' }),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: './src/web/index.html',
+    }),
   ],
 };
 
