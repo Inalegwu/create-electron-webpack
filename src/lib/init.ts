@@ -23,7 +23,7 @@ export const init = async (projectName: string, options: Options) => {
     console.error(
       `\n\x1b[31m"${path.basename(
         projectDir
-      )}" directory already exits.\x1b[0m\n`
+      )}" directory already exists.\x1b[0m\n`
     );
     throw new Error(`already exists.`);
   }
