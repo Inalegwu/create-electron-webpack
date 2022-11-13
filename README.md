@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/dt/electron-starter)
 
-Yet another create-electron-app.
+Yet another [create-electron-app](https://github.com/electron/forge#getting-started).
 
 ## :rocket: Getting Started
 
@@ -22,7 +22,7 @@ npx electron-starter
 ## :green_book: Usage
 
 ```sh
-Usage: electron-starter <project-name> --template <template> [--manager <package manager>]
+electron-starter <project-name> --template <template> [--manager <package manager>]
 ```
 
 If arguments are missing or invalid, fall back to interactive mode.
@@ -41,7 +41,7 @@ If arguments are missing or invalid, fall back to interactive mode.
 | option             | description                                                |
 | :----------------- | :--------------------------------------------------------- |
 | `--version`        | Show version number                                        |
-| `--template`, `-t` | Select a template                                          |
+| `--template`, `-t` | Select a template **(_required_)**                         |
 | `--manager`, `-m`  | Select a package manager: `npm`(_default_), `pnpm`, `yarn` |
 | `--help`           | Show help                                                  |
 
@@ -109,6 +109,46 @@ app.whenReady().then(() => {
 ## :package: How to package your app to publish
 
 Use [electron-builder](https://www.electron.build/) or [electron-packager](https://electron.github.io/electron-packager/main/).
+
+_Sample script for electron-builer `builder.js`:_
+
+```javascript
+require('electron-builder').build({
+  config: {
+    productName: 'Electron App',
+    // e.g. "Electron App-1.0.0-win32.exe"
+    artifactName: '${productName}-${version}-${platform}.${ext}',
+    copyright: '',
+    /**
+     * A glob patterns relative to the app directory,
+     * which specifies which files to include.
+     */
+    files: ['dist/**/*'],
+    // Meta data directories
+    directories: {
+      output: 'release',
+      buildResources: 'assets',
+    },
+    win: {
+      // App icon
+      icon: 'assets/icon.ico',
+    },
+    mac: {
+      icon: 'assets/icon.icns',
+      // Avoid automatic code signing
+      identity: null,
+    },
+  },
+});
+```
+
+_And then run the script:_
+
+```sh
+node ./builder.js
+```
+
+<img width="640" alt="electron-builder" src="https://user-images.githubusercontent.com/52094761/201499630-59aa5eab-def6-4d2a-abb6-e4fb1c1077d9.png">
 
 ## :copyright: Copyright
 
