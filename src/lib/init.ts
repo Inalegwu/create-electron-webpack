@@ -1,6 +1,8 @@
-import fs from 'fs-extra';
+import fs from 'node:fs';
 import path from 'node:path';
 import child_process from 'node:child_process';
+
+import { copySync } from 'fs-extra';
 
 type Options = {
   manager?: Manager | string;
@@ -12,10 +14,10 @@ export const init = async (projectName: string, options: Options) => {
 
   // commands
   const cmd = manager || 'npm';
-  const deps = manager === 'yarn' ? 'add' : 'install';
-  const devDeps = manager === 'yarn' ? 'add -D' : 'install -D';
+  const depsCmd = manager === 'yarn' ? 'add' : 'install';
+  const devDepsCmd = manager === 'yarn' ? 'add -D' : 'install -D';
 
-  // dir paths
+  // create project dir
   const projectDir = path.join(process.cwd(), projectName);
 
   // check if project dir exists
@@ -26,6 +28,8 @@ export const init = async (projectName: string, options: Options) => {
       )}" directory already exists.\x1b[0m\n`
     );
     throw new Error(`already exists.`);
+  } else {
+    fs.mkdirSync(projectDir);
   }
 
   // template
@@ -33,19 +37,12 @@ export const init = async (projectName: string, options: Options) => {
   if (!fs.existsSync(templateDir)) {
     throw new Error(`Template "${template}" not found.`);
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const templateJson = require(path.join(templateDir, 'template.json'));
-
-  // init dir
-  const initCmd = manager === 'pnpm' ? 'init' : 'init -y';
-  fs.mkdirSync(projectDir);
-  child_process.execSync(`${cmd} ${initCmd}`, {
-    cwd: projectDir,
-  });
+  const templateJson = JSON.parse(
+    fs.readFileSync(path.join(templateDir, 'template.json'), 'utf8')
+  );
 
   // copy files
-  fs.copySync(path.join(templateDir, 'files'), projectDir);
+  copySync(path.join(templateDir, 'files'), projectDir);
 
   // rename `gitignore` to `.gitignore`.
   const gitignorePath = path.join(projectDir, 'gitignore');
@@ -57,22 +54,21 @@ export const init = async (projectName: string, options: Options) => {
     }
   }
 
-  // run `npm install`
-  child_process.execSync(`${cmd} install`, {
-    cwd: projectDir,
-    stdio: 'inherit',
-  });
-
-  // merge package.json
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const packageJson = require(path.join(projectDir, 'package.json'));
-
-  packageJson.main = templateJson.package.main;
-  packageJson.scripts = {
-    ...(packageJson.scripts || {}),
-    ...(templateJson.package.scripts || {}),
+  // create 'package.json' for the project
+  const packageJson = {
+    name: projectName,
+    description: '',
+    version: '1.0.0',
+    author: '',
+    license: 'MIT',
+    main: templateJson.package.main,
+    scripts: { ...templateJson.package.scripts },
   };
-  fs.writeJSONSync(path.join(projectDir, 'package.json'), packageJson);
+
+  fs.writeFileSync(
+    path.join(projectDir, 'package.json'),
+    JSON.stringify(packageJson, null, '\t')
+  );
 
   // install dependencies
   const templateDeps = templateJson.package.dependencies || [];
@@ -85,13 +81,13 @@ export const init = async (projectName: string, options: Options) => {
   const devDependencies = combinedDevDependencies.map(({ name }) => name);
 
   if (!template.match(/^vanilla/)) {
-    child_process.execSync(`${cmd} ${deps} ${dependencies.join(' ')}`, {
+    child_process.execSync(`${cmd} ${depsCmd} ${dependencies.join(' ')}`, {
       cwd: projectDir,
       stdio: 'inherit',
     });
   }
 
-  child_process.execSync(`${cmd} ${devDeps} ${devDependencies.join(' ')}`, {
+  child_process.execSync(`${cmd} ${devDepsCmd} ${devDependencies.join(' ')}`, {
     cwd: projectDir,
     stdio: 'inherit',
   });
