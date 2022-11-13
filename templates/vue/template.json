@@ -11,7 +11,6 @@
     "devDependencies": [
       { "name": "@babel/core" },
       { "name": "@babel/preset-env" },
-      { "name": "@vue/compiler-sfc" },
       { "name": "babel-loader" },
       { "name": "chokidar" },
       { "name": "cross-env" },

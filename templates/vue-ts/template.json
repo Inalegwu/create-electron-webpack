@@ -10,7 +10,6 @@
     "dependencies": [{ "name": "vue@latest" }],
     "devDependencies": [
       { "name": "@types/node" },
-      { "name": "@vue/compiler-sfc" },
       { "name": "chokidar" },
       { "name": "cross-env" },
       { "name": "css-loader" },
