@@ -16,8 +16,7 @@ npx electron-starter
 
 - Supports hot reloading in both the main and renderer processes.
 - Available in [8 flavors](https://github.com/sprout2000/electron-starter#templates).
-- No redundant samples and settings.
-- Customizable as you like.
+- No redundant samples or preconfigurations.
 
 ## :green_book: Usage
 
@@ -110,7 +109,7 @@ app.whenReady().then(() => {
 
 Use [electron-builder](https://www.electron.build/) or [electron-packager](https://electron.github.io/electron-packager/main/).
 
-_Sample script for electron-builer `builder.js`:_
+_Sample script for electron-builder `builder.js`:_
 
 ```javascript
 require('electron-builder').build({
