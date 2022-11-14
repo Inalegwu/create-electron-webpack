@@ -24,7 +24,7 @@ npx electron-starter
 electron-starter <project-name> --template <template> [--manager <package manager>]
 ```
 
-If arguments are missing or invalid, fall back to interactive mode.
+If the arguments are missing or invalid, the command will fall back to interactive mode.
 
 ### Templates
 
