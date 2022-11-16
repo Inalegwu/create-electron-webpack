@@ -147,6 +147,12 @@ _And then run the script:_
 node ./builder.js
 ```
 
+_NOTE: If you prefer electron-builder with `pnpm`, you'll need to adjust your `.npmrc` to use any one the following approaches in order for your dependencies to be bundled correctly:_
+
+```sh
+node-linker=hoisted
+```
+
 <img width="640" alt="electron-builder" src="https://user-images.githubusercontent.com/52094761/201499630-59aa5eab-def6-4d2a-abb6-e4fb1c1077d9.png">
 
 ## :copyright: Copyright
