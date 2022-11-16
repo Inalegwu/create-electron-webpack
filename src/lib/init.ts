@@ -63,6 +63,7 @@ export const init = async (projectName: string, options: Options) => {
     license: 'MIT',
     main: templateJson.package.main,
     scripts: { ...templateJson.package.scripts },
+    electronmon: templateJson.package.electronmon,
   };
 
   fs.writeFileSync(

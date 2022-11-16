@@ -4,6 +4,9 @@
     "scripts": {
       "dev": "cross-env NODE_ENV=\"development\" electronmon ."
     },
+    "electronmon": {
+      "patterns": ["./**/*"]
+    },
     "devDependencies": [
       { "name": "cross-env" },
       { "name": "electron" },
