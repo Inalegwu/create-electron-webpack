@@ -1,9 +1,4 @@
-# system
-
-.yarn
 .DS_Store
-node_modules
-
-# project
-
 dist
+release
+node_modules
