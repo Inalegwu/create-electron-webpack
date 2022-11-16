@@ -2,12 +2,12 @@
   "package": {
     "main": "main.js",
     "scripts": {
-      "dev": "cross-env NODE_ENV=\"development\" electron ."
+      "dev": "cross-env NODE_ENV=\"development\" electronmon ."
     },
     "devDependencies": [
-      { "name": "chokidar" },
       { "name": "cross-env" },
-      { "name": "electron" }
+      { "name": "electron" },
+      { "name": "electronmon" }
     ]
   }
 }

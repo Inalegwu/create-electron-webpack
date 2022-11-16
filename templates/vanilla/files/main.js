@@ -1,14 +1,5 @@
-const { app, BrowserWindow } = require('electron');
 const path = require('path');
-
-const { reloader } = require('./reloader');
-
-if (process.env.NODE_ENV === 'development') {
-  reloader({
-    mainPaths: ['main.js', 'preload.js'],
-    rendererPaths: ['index.html', 'renderer.js'],
-  });
-}
+const { app, BrowserWindow } = require('electron');
 
 app.whenReady().then(() => {
   const mainWindow = new BrowserWindow({
