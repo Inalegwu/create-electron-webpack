@@ -18,6 +18,12 @@ npx electron-starter
 - Available in [8 flavors](https://github.com/sprout2000/electron-starter#templates).
 - No redundant samples or preconfigurations.
 
+## :inbox_tray: Installation
+
+```sh
+npm i -g electron-starter
+```
+
 ## :green_book: Usage
 
 ```sh
@@ -56,7 +62,7 @@ _NOTE: `Yarn@v2 or later` is NOT supported._
 % npm run build
 ```
 
-## :inbox_tray: How to load developer tools (React, Vue3)
+## :electric_plug: How to load developer tools (React, Vue3)
 
 [electron-devtools-installer](https://www.npmjs.com/package/electron-devtools-installer) is recommended.
 
