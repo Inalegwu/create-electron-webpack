@@ -1,8 +1,10 @@
 import path from 'path';
 import yargs from 'yargs';
+import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 
 import { init } from './lib/init';
+import { checkUpdate } from './lib/checkUpdate';
 
 const questions: QuestionCollection = [
   {
@@ -57,10 +59,9 @@ const print = (dir: string, manager?: Manager) => {
   const cmd = manager || 'npm';
 
   console.log(
-    `\nScaffolding project in \x1b[36m${path.resolve(
-      process.cwd(),
-      dir
-    )}\x1b[0m...`
+    `\nScaffolding project in ${chalk.cyan(
+      `${path.resolve(process.cwd(), dir)}`
+    )}`
   );
   console.log('\nDone. Now run:');
   console.log(`\n  cd ${dir}`);
@@ -68,8 +69,9 @@ const print = (dir: string, manager?: Manager) => {
 };
 
 export const cli = async (rawArgs: string[]) => {
-  const slicedArgs = rawArgs.slice(2);
+  await checkUpdate();
 
+  const slicedArgs = rawArgs.slice(2);
   const argv = yargs(slicedArgs)
     .usage(
       '\nUsage: electron-starter <project-name> --template <template> [--manager <package manager>]'

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import child_process from 'node:child_process';
 
+import chalk from 'chalk';
 import { copySync } from 'fs-extra';
 
 type Options = {
@@ -23,9 +24,9 @@ export const init = async (projectName: string, options: Options) => {
   // check if project dir exists
   if (fs.existsSync(projectDir)) {
     console.error(
-      `\n\x1b[31m"${path.basename(
-        projectDir
-      )}" directory already exists.\x1b[0m\n`
+      `\n${chalk.red(
+        `"${path.basename(projectDir)}" directory already exists.`
+      )}`
     );
     throw new Error(`already exists.`);
   } else {
@@ -33,7 +34,7 @@ export const init = async (projectName: string, options: Options) => {
   }
 
   // template
-  const templateDir = path.resolve(__dirname, `../../templates/${template}`);
+  const templateDir = path.resolve(__dirname, `../templates/${template}`);
   if (!fs.existsSync(templateDir)) {
     throw new Error(`Template "${template}" not found.`);
   }
