@@ -12,10 +12,10 @@ export const checkUpdate = async () => {
 
   if (updateAvailable) {
     const msg = {
-      updateAvailable: `update available ${chalk.dim(version)} → ${chalk.green(
+      updateAvailable: `Update available! ${chalk.dim(version)} → ${chalk.green(
         latestVersion
       )}`,
-      runUpdate: `Run ${chalk.cyan(`npm i -g ${name}`)} to update`,
+      runUpdate: `Run ${chalk.cyan(`npm i -g ${name}`)} to update.`,
     };
 
     console.log(
