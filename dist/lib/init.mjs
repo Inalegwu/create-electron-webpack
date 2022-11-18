@@ -1,16 +1,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import child_process from 'node:child_process';
 
 import chalk from 'chalk';
-import { copySync } from 'fs-extra';
+import pkg from 'fs-extra';
+const { copySync } = pkg;
 
-type Options = {
-  manager?: Manager | string;
-  template: string;
-};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-export const init = async (projectName: string, options: Options) => {
+export const init = async (projectName, options) => {
   const { manager, template } = options;
 
   // commands
@@ -34,7 +34,7 @@ export const init = async (projectName: string, options: Options) => {
   }
 
   // template
-  const templateDir = path.resolve(__dirname, `../templates/${template}`);
+  const templateDir = path.resolve(__dirname, `../../templates/${template}`);
   if (!fs.existsSync(templateDir)) {
     throw new Error(`Template "${template}" not found.`);
   }

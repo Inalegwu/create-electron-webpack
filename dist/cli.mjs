@@ -1,13 +1,19 @@
+import fs from 'fs';
 import path from 'path';
 import yargs from 'yargs';
 import chalk from 'chalk';
-import inquirer, { QuestionCollection } from 'inquirer';
+import inquirer from 'inquirer';
 
-import { init } from './lib/init';
-import { checkUpdate } from './lib/checkUpdate';
-import { version } from '../package.json';
+import { init } from './lib/init.mjs';
+import { checkUpdate } from './lib/checkUpdate.mjs';
 
-const questions: QuestionCollection = [
+const loadJSON = (path) => {
+  return JSON.parse(fs.readFileSync(new URL(path, import.meta.url)));
+};
+const pkgJson = loadJSON('../package.json');
+
+/** @type {import('inquirer').QuestionCollection} */
+const questions = [
   {
     type: 'input',
     name: 'project',
@@ -36,7 +42,7 @@ const questions: QuestionCollection = [
   },
 ];
 
-const validateTemplateName = (template: string) => {
+const validateTemplateName = (template) => {
   const templates = [
     'vanilla',
     'vanilla-ts',
@@ -51,12 +57,12 @@ const validateTemplateName = (template: string) => {
   return templates.includes(template);
 };
 
-const validateManager = (pkg?: string) => {
+const validateManager = (pkg) => {
   const pkgManager = ['npm', 'pnpm', 'yarn'];
   return pkg ? pkgManager.includes(pkg) : true;
 };
 
-const print = (dir: string, manager?: Manager) => {
+const print = (dir, manager) => {
   const cmd = manager || 'npm';
 
   console.log(
@@ -69,7 +75,7 @@ const print = (dir: string, manager?: Manager) => {
   console.log(`  ${cmd === 'npm' ? 'npm run' : cmd} dev\n`);
 };
 
-export const cli = async (rawArgs: string[]) => {
+export const cli = async (rawArgs) => {
   await checkUpdate();
 
   const slicedArgs = rawArgs.slice(2);
@@ -98,7 +104,7 @@ export const cli = async (rawArgs: string[]) => {
     .parseSync();
 
   if (argv.version) {
-    console.log(version);
+    console.log(pkgJson.version);
     process.exit(0);
   }
 
@@ -109,7 +115,7 @@ export const cli = async (rawArgs: string[]) => {
     argv._.length === 0
   ) {
     const result = await inquirer.prompt(questions);
-    const manager = result.manager as Manager;
+    const manager = result.manager;
     const template =
       result.variant === 'JavaScript'
         ? `${result.template}`
@@ -124,7 +130,7 @@ export const cli = async (rawArgs: string[]) => {
       manager: argv.manager || 'npm',
     }).then(() => {
       const manager = argv.manager || 'npm';
-      print(argv._[0].toString(), manager as Manager);
+      print(argv._[0].toString(), manager);
     });
   }
 };
