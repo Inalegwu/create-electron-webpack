@@ -28,7 +28,7 @@
     "templates"
   ],
   "scripts": {
-    "build": "rimraf dist && node ./esbuild.js"
+    "build": "rimraf dist && tsc"
   },
   "dependencies": {
     "boxen": "^7.0.0",
