@@ -5,6 +5,7 @@ import inquirer, { QuestionCollection } from 'inquirer';
 
 import { init } from './lib/init';
 import { checkUpdate } from './lib/checkUpdate';
+import { version } from '../package.json';
 
 const questions: QuestionCollection = [
   {
@@ -73,6 +74,7 @@ export const cli = async (rawArgs: string[]) => {
 
   const slicedArgs = rawArgs.slice(2);
   const argv = yargs(slicedArgs)
+    .version(false)
     .usage(
       '\nUsage: electron-starter <project-name> --template <template> [--manager <package manager>]'
     )
@@ -87,9 +89,18 @@ export const cli = async (rawArgs: string[]) => {
       alias: 'm',
       description: 'npm, pnpm, yarn',
     })
+    .option('version', {
+      type: 'boolean',
+      alias: 'v',
+    })
     .help()
     .locale('en')
     .parseSync();
+
+  if (argv.version) {
+    console.log(version);
+    process.exit(0);
+  }
 
   if (
     !argv.template ||
