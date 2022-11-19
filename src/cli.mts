@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import yargs from 'yargs';
 import chalk from 'chalk';
-import inquirer from 'inquirer';
+import inquirer, { QuestionCollection } from 'inquirer';
 
 import { init } from './lib/init.mjs';
 import { checkUpdate } from './lib/checkUpdate.mjs';
@@ -12,8 +12,7 @@ const loadJSON = (path: string) => {
 };
 const pkgJson = loadJSON('../package.json');
 
-/** @type {import('inquirer').QuestionCollection} */
-const questions = [
+const questions: QuestionCollection = [
   {
     type: 'input',
     name: 'project',
