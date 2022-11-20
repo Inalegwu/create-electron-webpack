@@ -20,8 +20,6 @@ export const init = async (projectName: string, options: Options) => {
 
   // commands
   const cmd = manager || 'npm';
-  const depsCmd = manager === 'yarn' ? 'add' : 'install';
-  const devDepsCmd = manager === 'yarn' ? 'add -D' : 'install -D';
 
   // create project dir
   const projectDir = path.join(process.cwd(), projectName);
@@ -85,13 +83,13 @@ export const init = async (projectName: string, options: Options) => {
   const devDependencies = [...templateDevDeps].map(({ name }) => name);
 
   if (!template.match(/^vanilla/)) {
-    child_process.execSync(`${cmd} ${depsCmd} ${dependencies.join(' ')}`, {
+    child_process.execSync(`${cmd} add ${dependencies.join(' ')}`, {
       cwd: projectDir,
       stdio: 'inherit',
     });
   }
 
-  child_process.execSync(`${cmd} ${devDepsCmd} ${devDependencies.join(' ')}`, {
+  child_process.execSync(`${cmd} add -D ${devDependencies.join(' ')}`, {
     cwd: projectDir,
     stdio: 'inherit',
   });
