@@ -8,7 +8,7 @@ import pkg from 'fs-extra';
 const { copySync } = pkg;
 
 type Options = {
-  manager?: Manager | string;
+  manager?: string;
   template: string;
 };
 

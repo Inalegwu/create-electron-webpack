@@ -61,7 +61,7 @@ const validateManager = (pkg?: string) => {
   return pkg ? pkgManager.includes(pkg) : true;
 };
 
-const print = (dir: string, manager?: Manager) => {
+const print = (dir: string, manager?: string) => {
   const cmd = manager || 'npm';
 
   console.log(
@@ -126,10 +126,9 @@ export const cli = async (rawArgs: string[]) => {
   } else {
     init(argv._[0].toString(), {
       template: argv.template,
-      manager: argv.manager || 'npm',
+      manager: argv.manager,
     }).then(() => {
-      const manager = argv.manager || 'npm';
-      print(argv._[0].toString(), manager as Manager);
+      print(argv._[0].toString(), argv.manager);
     });
   }
 };
