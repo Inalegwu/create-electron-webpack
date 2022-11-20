@@ -41,7 +41,7 @@ const questions: QuestionCollection = [
   },
 ];
 
-const validateTemplateName = (template: string) => {
+const validateTemplate = (template: string) => {
   const templates = [
     'vanilla',
     'vanilla-ts',
@@ -109,7 +109,7 @@ export const cli = async (rawArgs: string[]) => {
 
   if (
     !argv.template ||
-    !validateTemplateName(argv.template) ||
+    !validateTemplate(argv.template) ||
     !validateManager(argv.manager) ||
     argv._.length === 0
   ) {
