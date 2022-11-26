@@ -15,7 +15,7 @@ watchEffect(() => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
   text-align: center;
   font-family: sans-serif;
