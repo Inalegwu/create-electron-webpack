@@ -15,7 +15,8 @@ watchEffect(() => {
   </div>
 </template>
 
-<style scoped>
+<!-- https://github.com/vuejs/vue-loader/issues/1915 -->
+<style>
 .container {
   text-align: center;
   font-family: sans-serif;
