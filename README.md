@@ -117,6 +117,8 @@ _Sample script for electron-builder `builder.js`:_
 npm install --save-dev electron-builder
 ```
 
+You can get the sample icons from [assets](https://github.com/sprout2000/electron-starter/tree/main/assets) directory.
+
 ```javascript
 require('electron-builder').build({
   config: {
@@ -136,10 +138,10 @@ require('electron-builder').build({
     },
     win: {
       // App icon
-      icon: 'assets/icon.ico',
+      icon: 'assets/win32.ico',
     },
     mac: {
-      icon: 'assets/icon.icns',
+      icon: 'assets/darwin.icns',
       // Avoid automatic code signing
       identity: null,
     },
