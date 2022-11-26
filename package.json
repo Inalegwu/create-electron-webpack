@@ -1,7 +1,7 @@
 {
   "name": "electron-starter",
   "description": "Yet another create-electron-app.",
-  "version": "1.7.5",
+  "version": "1.7.4",
   "license": "MIT",
   "author": "sprout2000",
   "keywords": [
@@ -44,7 +44,7 @@
     "@types/inquirer": "^9.0.3",
     "@types/node": "^18.11.9",
     "@types/semver": "^7.3.13",
-    "@types/yargs": "^17.0.14",
+    "@types/yargs": "17.0.13",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "eslint": "^8.28.0",
