@@ -87,13 +87,9 @@ Or you will need to install [React Devtools](https://chrome.google.com/webstore/
 
 _Example in the case that you prefer [electron-search-devtools](https://www.npmjs.com/package/electron-search-devtools) to load already installed devtools:_
 
-1. Install `electron-search-devtools`:
-
 ```sh
 npm install --save-dev electron-search-devtools
 ```
-
-2. And then, load the necessary developer tools in `src/main.js` or `src/main.ts`:
 
 ```javascript
 // load `session` and `searchDevtools`
@@ -116,6 +112,10 @@ app.whenReady().then(() => {
 Use [electron-builder](https://www.electron.build/) or [electron-packager](https://electron.github.io/electron-packager/main/).
 
 _Sample script for electron-builder `builder.js`:_
+
+```sh
+npm install --save-dev electron-builder
+```
 
 ```javascript
 require('electron-builder').build({
@@ -157,4 +157,4 @@ node ./builder.js
 
 ## :copyright: Copyright
 
-See [LICENSE.md](./LICENSE.md) file.
+Copyright (c) 2022 sprout2000
