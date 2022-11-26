@@ -4,6 +4,10 @@
 	const handleClick = () => {
 		count += 1;
 	}
+
+  $: {
+    window.myAPI.updateTitle(count);
+  }
 </script>
 
 <div class="container">

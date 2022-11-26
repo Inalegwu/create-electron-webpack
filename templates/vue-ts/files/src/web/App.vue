@@ -1,6 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
+
 const count = ref(0);
+
+watchEffect(() => {
+  window.myAPI.updateTitle(count.value);
+});
 </script>
 
 <template>
