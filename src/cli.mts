@@ -124,10 +124,10 @@ export const cli = async (rawArgs: string[]) => {
       print(result.project, manager)
     );
   } else {
-    init(argv._[0].toString(), {
-      template: argv.template,
-      manager: argv.manager,
-    }).then(() => {
+    const template = argv.template;
+    const manager = argv.manager;
+
+    init(argv._[0].toString(), { template, manager }).then(() => {
       print(argv._[0].toString(), argv.manager);
     });
   }
