@@ -1,7 +1,7 @@
 {
   "name": "electron-starter",
   "description": "Yet another create-electron-app.",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "license": "MIT",
   "author": "sprout2000",
   "keywords": [
