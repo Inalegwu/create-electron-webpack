@@ -45,9 +45,9 @@ If the arguments are missing or invalid, the command will fall back to interacti
 
 | option             | description                                                |
 | :----------------- | :--------------------------------------------------------- |
-| `--version`        | Show version number                                        |
 | `--template`, `-t` | Select a template **(_required_)**                         |
 | `--manager`, `-m`  | Select a package manager: `npm`(_default_), `pnpm`, `yarn` |
+| `--version`, `-v`  | Show version number                                        |
 | `--help`           | Show help                                                  |
 
 _NOTE: `Yarn@v2 or later` is NOT supported._
