@@ -62,6 +62,29 @@ _NOTE: `Yarn@v2 or later` is NOT supported._
 % npm run build
 ```
 
+## :art: How to use sass (`.scss`) in your project
+
+You will need to add [sass](https://www.npmjs.com/package/sass) and [sass-loader](https://www.npmjs.com/package/sass-loader):
+
+```sh
+npm install --save-dev sass sass-loader
+```
+
+And then, update your `webpack.config.(j|t)s`:
+
+```diff javascript
+    module: {
+      rules: [
+        {
+-         test: /\.css$/,
++         test: /\.s?css$/,
+-         use: [MiniCssExtractPlugin.loader, 'css-loader'],
++         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        },
+      ],
+    },
+```
+
 ## :electric_plug: How to load developer tools (React, Vue3)
 
 [electron-devtools-installer](https://www.npmjs.com/package/electron-devtools-installer) is recommended.
