@@ -8,7 +8,9 @@ const isDev = process.env.NODE_ENV === 'development';
 const common = {
   mode: isDev ? 'development' : 'production',
   externals: ['fsevents'],
-  resolve: { extensions: ['.js', '.json'] },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+  },
   output: {
     publicPath: './',
     assetModuleFilename: 'assets/[name][ext]',
@@ -63,8 +65,8 @@ const renderer = {
   plugins: [
     new VueLoaderPlugin(),
     new DefinePlugin({
-      __VUE_OPTIONS_API__: true,
-      __VUE_PROD_DEVTOOLS__: true,
+      __VUE_OPTIONS_API__: false,
+      __VUE_PROD_DEVTOOLS__: false,
     }),
     new HtmlWebpackPlugin({
       inject: 'body',
