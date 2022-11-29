@@ -19,9 +19,13 @@ const common: Configuration = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'ts-loader',
+        loader: 'babel-loader',
         options: {
-          appendTsSuffixTo: [/\.vue$/],
+          presets: [
+            '@babel/preset-env',
+            'babel-preset-typescript-vue3',
+            '@babel/preset-typescript',
+          ],
         },
       },
       {
