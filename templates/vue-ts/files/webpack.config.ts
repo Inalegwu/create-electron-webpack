@@ -23,8 +23,8 @@ const common: Configuration = {
         options: {
           presets: [
             '@babel/preset-env',
-            'babel-preset-typescript-vue3',
             '@babel/preset-typescript',
+            'babel-preset-typescript-vue3',
           ],
         },
       },

@@ -6,6 +6,8 @@
     "moduleResolution": "Node",
     "lib": ["DOM", "ESNext"],
     "resolveJsonModule": true,
+    "jsx": "preserve",
+    "noEmit": true,
     "strict": true
   },
   "include": ["src"],
