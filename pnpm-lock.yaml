@@ -12,7 +12,7 @@ specifiers:
   chalk: ^5.1.2
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
-  fs-extra: ^11.0.0
+  fs-extra: ^11.1.0
   inquirer: ^9.1.4
   package-json: ^8.1.0
   prettier: ^2.8.0
@@ -24,7 +24,7 @@ specifiers:
 dependencies:
   boxen: 7.0.0
   chalk: 5.1.2
-  fs-extra: 11.0.0
+  fs-extra: 11.1.0
   inquirer: 9.1.4
   package-json: 8.1.0
   semver: 7.3.8
@@ -827,8 +827,8 @@ packages:
     engines: {node: '>= 14.17'}
     dev: false
 
-  /fs-extra/11.0.0:
-    resolution: {integrity: sha512-4YxRvMi4P5C3WQTvdRfrv5UVqbISpqjORFQAW5QPiKAauaxNCwrEdIi6pG3tDFhKKpMen+enEhHIzB/tvIO+/w==}
+  /fs-extra/11.1.0:
+    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
     engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.10
