@@ -1,37 +1,37 @@
-const path = require('node:path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("node:path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === "development";
 
 /** @type {import('webpack').Configuration} */
 const common = {
-  mode: isDev ? 'development' : 'production',
-  externals: ['fsevents'],
+  mode: isDev ? "development" : "production",
+  externals: ["fsevents"],
   resolve: {
     alias: {
-      svelte: path.resolve('node_modules', 'svelte'),
+      svelte: path.resolve("node_modules", "svelte"),
     },
-    extensions: ['.mjs', '.js', '.svelte', '.json'],
-    mainFields: ['svelte', 'browser', 'module', 'main'],
+    extensions: [".mjs", ".js", ".svelte", ".json"],
+    mainFields: ["svelte", "browser", "module", "main"],
   },
   output: {
-    publicPath: './',
-    assetModuleFilename: 'assets/[name][ext]',
+    publicPath: "./",
+    assetModuleFilename: "assets/[name][ext]",
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
-          presets: ['@babel/preset-env'],
+          presets: ["@babel/preset-env"],
         },
       },
       {
         test: /\.svelte$/,
-        loader: 'svelte-loader',
+        loader: "svelte-loader",
         options: {
           emitCss: true,
         },
@@ -44,40 +44,40 @@ const common = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(ico|png|svg|eot|woff?2?)$/,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
   watch: isDev,
-  devtool: isDev ? 'source-map' : undefined,
+  devtool: isDev ? "source-map" : undefined,
 };
 
 /** @type {import('webpack').Configuration} */
 const main = {
   ...common,
-  target: 'electron-main',
-  entry: { main: './src/main.js' },
+  target: "electron-main",
+  entry: { main: "./src/main.js" },
 };
 
 /** @type {import('webpack').Configuration} */
 const preload = {
   ...common,
-  target: 'electron-preload',
-  entry: { preload: './src/preload.js' },
+  target: "electron-preload",
+  entry: { preload: "./src/preload.js" },
 };
 
 /** @type {import('webpack').Configuration} */
 const renderer = {
   ...common,
-  target: 'web',
-  entry: { app: './src/web/index.js' },
+  target: "web",
+  entry: { app: "./src/web/index.js" },
   plugins: [
     new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({ template: './src/web/index.html' }),
+    new HtmlWebpackPlugin({ template: "./src/web/index.html" }),
   ],
 };
 

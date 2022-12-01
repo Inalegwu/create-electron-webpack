@@ -78,8 +78,8 @@ And then, update your `webpack.config.(j|t)s`:
         {
 -         test: /\.css$/,
 +         test: /\.s?css$/,
--         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-+         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+-         use: [MiniCssExtractPlugin.loader, "css-loader"],
++         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         },
       ],
     },
@@ -95,7 +95,7 @@ npm install --save-dev electron-devtools-installer
 
 ```javascript
 // Example for Vue3
-import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
+import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-installer";
 
 app.whenReady().then(() => {
   installExtension(VUEJS3_DEVTOOLS, {
@@ -116,12 +116,12 @@ npm install --save-dev electron-search-devtools
 
 ```javascript
 // load `session` and `searchDevtools`
-import { app, session } from 'electron';
-import { searchDevtools } from 'electron-search-devtools';
+import { app, session } from "electron";
+import { searchDevtools } from "electron-search-devtools";
 
 app.whenReady().then(() => {
   // 'REACT' or 'VUE3'
-  searchDevtools('VUE3').then((devtools) => {
+  searchDevtools("VUE3").then((devtools) => {
     // 'allowFileAccess' is required
     session.defaultSession.loadExtension(devtools, { allowFileAccess: true });
   });
@@ -143,28 +143,28 @@ npm install --save-dev electron-builder
 You can get the sample icons from [assets](https://github.com/sprout2000/electron-starter/tree/main/assets) directory.
 
 ```javascript
-require('electron-builder').build({
+require("electron-builder").build({
   config: {
-    productName: 'Electron App',
+    productName: "Electron App",
     // e.g. "Electron App-1.0.0-win32.exe"
-    artifactName: '${productName}-${version}-${platform}.${ext}',
-    copyright: '',
+    artifactName: "${productName}-${version}-${platform}.${ext}",
+    copyright: "",
     /**
      * A glob patterns relative to the app directory,
      * which specifies which files to include.
      */
-    files: ['dist/**/*'],
+    files: ["dist/**/*"],
     // Meta data directories
     directories: {
-      output: 'release',
-      buildResources: 'assets',
+      output: "release",
+      buildResources: "assets",
     },
     win: {
       // App icon
-      icon: 'assets/win32.ico',
+      icon: "assets/win32.ico",
     },
     mac: {
-      icon: 'assets/darwin.icns',
+      icon: "assets/darwin.icns",
       // Avoid automatic code signing
       identity: null,
     },

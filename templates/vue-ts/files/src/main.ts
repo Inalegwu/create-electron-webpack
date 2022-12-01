@@ -1,19 +1,19 @@
-import path from 'path';
-import { BrowserWindow, app, ipcMain } from 'electron';
+import path from "path";
+import { BrowserWindow, app, ipcMain } from "electron";
 
 app.whenReady().then(() => {
   const mainWindow = new BrowserWindow({
     webPreferences: {
-      preload: path.resolve(__dirname, 'preload.js'),
+      preload: path.resolve(__dirname, "preload.js"),
     },
   });
 
-  ipcMain.handle('update-title', (_e, arg) => {
+  ipcMain.handle("update-title", (_e, arg) => {
     mainWindow.setTitle(`Electron App: ${arg}`);
   });
 
-  mainWindow.loadFile('dist/index.html');
+  mainWindow.loadFile("dist/index.html");
   // mainWindow.webContents.openDevTools({ mode: 'detach' });
 });
 
-app.once('window-all-closed', () => app.quit());
+app.once("window-all-closed", () => app.quit());

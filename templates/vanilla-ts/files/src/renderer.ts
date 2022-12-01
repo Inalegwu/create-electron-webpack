@@ -1,1 +1,1 @@
-console.log('renderer process is running...');
+console.log("renderer process is running...");

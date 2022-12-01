@@ -1,10 +1,10 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import child_process from 'node:child_process';
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import child_process from "node:child_process";
 
-import chalk from 'chalk';
-import pkg from 'fs-extra';
+import chalk from "chalk";
+import pkg from "fs-extra";
 const { copySync } = pkg;
 
 type Options = {
@@ -19,7 +19,7 @@ export const init = async (projectName: string, options: Options) => {
   const { manager, template } = options;
 
   // commands
-  const cmd = manager || 'npm';
+  const cmd = manager || "npm";
 
   // create project dir
   const projectDir = path.join(process.cwd(), projectName);
@@ -42,37 +42,37 @@ export const init = async (projectName: string, options: Options) => {
     throw new Error(`Template "${template}" not found.`);
   }
   const templateJson = JSON.parse(
-    fs.readFileSync(path.join(templateDir, 'template.json'), 'utf8')
+    fs.readFileSync(path.join(templateDir, "template.json"), "utf8")
   );
 
   // copy files
-  copySync(path.join(templateDir, 'files'), projectDir);
+  copySync(path.join(templateDir, "files"), projectDir);
 
   // rename `gitignore` to `.gitignore`.
-  const gitignorePath = path.join(projectDir, 'gitignore');
+  const gitignorePath = path.join(projectDir, "gitignore");
   if (fs.existsSync(gitignorePath)) {
     try {
-      fs.renameSync(gitignorePath, path.join(projectDir, '.gitignore'));
+      fs.renameSync(gitignorePath, path.join(projectDir, ".gitignore"));
     } catch (e) {
-      console.warn('Failed to rename gitignore.');
+      console.warn("Failed to rename gitignore.");
     }
   }
 
   // create 'package.json' for the project
   const packageJson = {
     name: projectName,
-    description: '',
-    version: '1.0.0',
-    author: '',
-    license: 'MIT',
+    description: "",
+    version: "1.0.0",
+    author: "",
+    license: "MIT",
     main: templateJson.package.main,
     scripts: { ...templateJson.package.scripts },
     electronmon: templateJson.package.electronmon,
   };
 
   fs.writeFileSync(
-    path.join(projectDir, 'package.json'),
-    JSON.stringify(packageJson, null, '\t')
+    path.join(projectDir, "package.json"),
+    JSON.stringify(packageJson, null, "\t")
   );
 
   // install dependencies
@@ -83,14 +83,14 @@ export const init = async (projectName: string, options: Options) => {
   const devDependencies = [...templateDevDeps].map(({ name }) => name);
 
   if (!template.match(/^vanilla/)) {
-    child_process.execSync(`${cmd} add ${dependencies.join(' ')}`, {
+    child_process.execSync(`${cmd} add ${dependencies.join(" ")}`, {
       cwd: projectDir,
-      stdio: 'inherit',
+      stdio: "inherit",
     });
   }
 
-  child_process.execSync(`${cmd} add -D ${devDependencies.join(' ')}`, {
+  child_process.execSync(`${cmd} add -D ${devDependencies.join(" ")}`, {
     cwd: projectDir,
-    stdio: 'inherit',
+    stdio: "inherit",
   });
 };
