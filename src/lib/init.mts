@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import child_process from "node:child_process";
 
+import { username } from "username";
 import chalk from "chalk";
 import pkg from "fs-extra";
 const { copySync } = pkg;
@@ -61,9 +62,9 @@ export const init = async (projectName: string, options: Options) => {
   // create 'package.json' for the project
   const packageJson = {
     name: projectName,
-    description: "",
-    version: "1.0.0",
-    author: "",
+    description: projectName,
+    version: "0.1.0",
+    author: await username(),
     license: "MIT",
     main: templateJson.package.main,
     scripts: { ...templateJson.package.scripts },

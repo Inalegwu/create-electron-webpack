@@ -37,6 +37,7 @@
     "inquirer": "^9.1.4",
     "package-json": "^8.1.0",
     "semver": "^7.3.8",
+    "username": "^6.0.0",
     "yargs": "^17.6.2"
   },
   "devDependencies": {
