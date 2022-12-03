@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 
 contextBridge.exposeInMainWorld("myAPI", {
-  updateTitle: (arg: number): Promise<void> =>
-    ipcRenderer.invoke("update-title", arg),
+  openExternal: (arg: string): Promise<void> =>
+    ipcRenderer.invoke("open-external", arg),
 });
