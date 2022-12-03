@@ -25,7 +25,7 @@ const questions: QuestionCollection = [
     type: "list",
     name: "template",
     message: "Select a framework:",
-    choices: ["vanilla", "react", "vue", "svelte"],
+    choices: ["react", "vue", "svelte"],
   },
   {
     type: "list",
@@ -36,15 +36,13 @@ const questions: QuestionCollection = [
   {
     type: "list",
     name: "manager",
-    message: "Which package manager do you prefer?:",
+    message: "Select a package manager:",
     choices: ["npm", "pnpm", "yarn"],
   },
 ];
 
 const validateTemplate = (template: string) => {
   const templates = [
-    "vanilla",
-    "vanilla-ts",
     "react",
     "react-ts",
     "vue",
@@ -86,8 +84,7 @@ export const cli = async (rawArgs: string[]) => {
     .option("template", {
       type: "string",
       alias: "t",
-      description:
-        "vanilla, vanilla-ts, react, react-ts, vue, vue-ts, svelte, svelte-ts",
+      description: "react, react-ts, vue, vue-ts, svelte, svelte-ts",
     })
     .option("manager", {
       type: "string",
@@ -97,6 +94,7 @@ export const cli = async (rawArgs: string[]) => {
     .option("version", {
       type: "boolean",
       alias: "v",
+      description: "Show version",
     })
     .help()
     .locale("en")
