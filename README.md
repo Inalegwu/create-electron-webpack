@@ -15,7 +15,7 @@ npx electron-starter
 ## :thumbsup: Features
 
 - Supports hot reloading in both the main and renderer processes.
-- Available in [8 flavors](https://github.com/sprout2000/electron-starter#templates).
+- Available in [6 flavors](https://github.com/sprout2000/electron-starter#templates).
 - No redundant samples or preconfigurations.
 
 ## :inbox_tray: Installation
@@ -34,12 +34,11 @@ If the arguments are missing or invalid, the command will fall back to interacti
 
 ### Templates
 
-| JavaScript |  TypeScript  |
-| :--------: | :----------: |
-| `vanilla`  | `vanilla-ts` |
-|  `react`   |  `react-ts`  |
-|   `vue`    |   `vue-ts`   |
-|  `svelte`  | `svelte-ts`  |
+| JavaScript | TypeScript  |
+| :--------: | :---------: |
+|  `react`   | `react-ts`  |
+|   `vue`    |  `vue-ts`   |
+|  `svelte`  | `svelte-ts` |
 
 ### Options
 
@@ -140,7 +139,7 @@ _Sample script for electron-builder `builder.js`:_
 npm install --save-dev electron-builder
 ```
 
-You can get the sample icons from [assets](https://github.com/sprout2000/electron-starter/tree/main/assets) directory.
+Sample icons are available in the [assets](https://github.com/sprout2000/electron-starter/tree/main/assets) directory of this repository.
 
 ```javascript
 require("electron-builder").build({
