@@ -42,14 +42,18 @@ const common = {
 const main = {
   ...common,
   target: "electron-main",
-  entry: { main: "./src/main.js" },
+  entry: {
+    main: "./src/main.js",
+  },
 };
 
 /** @type {import('webpack').Configuration} */
 const preload = {
   ...common,
   target: "electron-preload",
-  entry: { preload: "./src/preload.js" },
+  entry: {
+    preload: "./src/preload.js",
+  },
 };
 
 /** @type {import('webpack').Configuration} */
@@ -59,7 +63,10 @@ const renderer = {
   entry: { app: "./src/web/index.jsx" },
   plugins: [
     new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({ template: "./src/web/index.html" }),
+    new HtmlWebpackPlugin({
+      inject: "body",
+      template: "./src/web/index.html",
+    }),
   ],
 };
 

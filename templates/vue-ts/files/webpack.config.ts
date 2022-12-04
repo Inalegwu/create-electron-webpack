@@ -49,19 +49,25 @@ const common: Configuration = {
 const main: Configuration = {
   ...common,
   target: "electron-main",
-  entry: { main: "./src/main.ts" },
+  entry: {
+    main: "./src/main.ts",
+  },
 };
 
 const preload: Configuration = {
   ...common,
   target: "electron-preload",
-  entry: { preload: "./src/preload.ts" },
+  entry: {
+    preload: "./src/preload.ts",
+  },
 };
 
 const renderer: Configuration = {
   ...common,
   target: "web",
-  entry: { app: "./src/web/index.ts" },
+  entry: {
+    app: "./src/web/index.ts",
+  },
   plugins: [
     new VueLoaderPlugin(),
     new DefinePlugin({
