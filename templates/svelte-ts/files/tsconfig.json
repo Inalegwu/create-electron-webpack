@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "esModuleInterop": true,
-    "importsNotUsedAsValues": "error",
-    "preserveValueImports": true,
-    "isolatedModules": true,
-    "sourceMap": true,
     "resolveJsonModule": true,
     "strict": true,
     "types": ["svelte"]
