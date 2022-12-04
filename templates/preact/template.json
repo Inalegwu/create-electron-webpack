@@ -1,0 +1,32 @@
+{
+  "package": {
+    "main": "dist/main.js",
+    "scripts": {
+      "dev": "rimraf dist && run-p dev:*",
+      "build": "cross-env NODE_ENV=\"production\" webpack --progress",
+      "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
+      "dev:electron": "wait-on dist/main.js dist/index.html && electronmon ."
+    },
+    "electronmon": {
+      "patterns": ["dist/**/*"]
+    },
+    "dependencies": [{ "name": "preact" }],
+    "devDependencies": [
+      { "name": "@babel/core" },
+      { "name": "@babel/plugin-transform-react-jsx" },
+      { "name": "@babel/preset-env" },
+      { "name": "babel-loader" },
+      { "name": "cross-env" },
+      { "name": "css-loader" },
+      { "name": "electron" },
+      { "name": "electronmon" },
+      { "name": "html-webpack-plugin" },
+      { "name": "mini-css-extract-plugin" },
+      { "name": "npm-run-all" },
+      { "name": "rimraf" },
+      { "name": "wait-on" },
+      { "name": "webpack" },
+      { "name": "webpack-cli" }
+    ]
+  }
+}
