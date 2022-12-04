@@ -16,7 +16,7 @@ npx electron-starter
 
 - Supports hot reloading in both the main and renderer processes.
 - Available in [8 flavors](https://github.com/sprout2000/electron-starter#templates).
-- No redundant samples or preconfigurations.
+- No complicated pre-made settings.
 
 ## :inbox_tray: Installation
 
