@@ -4,8 +4,9 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "strict": true,
-    "types": ["svelte"]
+    "lib": ["DOM", "ESNext"],
+    "types": ["svelte"],
+    "strict": true
   },
   "include": ["src"],
   "ts-node": {

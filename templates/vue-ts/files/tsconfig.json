@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
     "module": "ESNext",
-    "esModuleInterop": true,
     "moduleResolution": "Node",
-    "lib": ["DOM", "ESNext"],
+    "esModuleInterop": true,
     "resolveJsonModule": true,
+    "lib": ["DOM", "ESNext"],
     "jsx": "preserve",
     "noEmit": true,
     "strict": true
