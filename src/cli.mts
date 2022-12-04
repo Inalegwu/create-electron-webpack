@@ -25,7 +25,7 @@ const questions: QuestionCollection = [
     type: "list",
     name: "template",
     message: "Select a framework:",
-    choices: ["react", "vue", "svelte", "preact"],
+    choices: ["react", "vue", "svelte"],
   },
   {
     type: "list",
@@ -49,8 +49,6 @@ const validateTemplate = (template: string) => {
     "vue-ts",
     "svelte",
     "svelte-ts",
-    "preact",
-    "preact-ts",
   ];
 
   return templates.includes(template);
@@ -86,8 +84,7 @@ export const cli = async (rawArgs: string[]) => {
     .option("template", {
       type: "string",
       alias: "t",
-      description:
-        "react, react-ts, vue, vue-ts, svelte, svelte-ts, preact, preact-ts",
+      description: "react, react-ts, vue, vue-ts, svelte, svelte-ts",
     })
     .option("manager", {
       type: "string",
