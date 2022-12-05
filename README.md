@@ -15,7 +15,7 @@ npx electron-starter
 ## :thumbsup: Features
 
 - Supports hot reloading in both the main and renderer processes.
-- Available in [6 flavors](https://github.com/sprout2000/electron-starter#templates).
+- Available in [8 flavors](https://github.com/sprout2000/electron-starter#templates).
 - No complicated pre-made settings.
 
 ## :inbox_tray: Installation
@@ -39,6 +39,7 @@ If the arguments are missing or invalid, the command will fall back to interacti
 |  `react`   | `react-ts`  |
 |   `vue`    |  `vue-ts`   |
 |  `svelte`  | `svelte-ts` |
+|  `preact`  | `preact-ts` |
 
 ### Options
 
