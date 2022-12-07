@@ -2,7 +2,7 @@ import { Configuration, ProvidePlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-const isDev = process.env.NODE_ENV === "development";
+const isDev = process.env.npm_lifecycle_event === "dev:webpack";
 
 const common: Configuration = {
   mode: isDev ? "development" : "production",

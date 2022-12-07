@@ -2,7 +2,7 @@ const path = require("node:path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isDev = process.env.NODE_ENV === "development";
+const isDev = process.env.npm_lifecycle_event === "dev:webpack";
 
 /** @type {import('webpack').Configuration} */
 const common = {

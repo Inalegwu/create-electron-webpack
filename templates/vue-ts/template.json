@@ -3,8 +3,8 @@
     "main": "dist/main.js",
     "scripts": {
       "dev": "rimraf dist && run-p dev:*",
-      "build": "vue-tsc && cross-env NODE_ENV=\"production\" webpack --progress",
-      "dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
+      "build": "rimraf dist && vue-tsc && webpack --progress",
+      "dev:webpack": "webpack --progress",
       "dev:electron": "wait-on dist/main.js dist/index.html && electronmon ."
     },
     "electronmon": {
@@ -18,7 +18,6 @@
       { "name": "@types/node" },
       { "name": "babel-loader" },
       { "name": "babel-preset-typescript-vue3" },
-      { "name": "cross-env" },
       { "name": "css-loader" },
       { "name": "electron" },
       { "name": "electronmon" },
