@@ -2,7 +2,7 @@ import { Configuration, DefinePlugin } from "webpack";
 import { VueLoaderPlugin } from "vue-loader";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-const isDev = process.env.npm_lifecycle_event === "dev:webpack";
+const isDev = process.env.NODE_ENV === "development";
 
 const common: Configuration = {
   mode: isDev ? "development" : "production",

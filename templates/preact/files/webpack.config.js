@@ -2,7 +2,7 @@ const { ProvidePlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isDev = process.env.npm_lifecycle_event === "dev:webpack";
+const isDev = process.env.NODE_ENV === "development";
 
 /** @type {import('webpack').Configuration} */
 const common = {
