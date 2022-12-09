@@ -20,7 +20,6 @@
       { "name": "html-webpack-plugin" },
       { "name": "mini-css-extract-plugin" },
       { "name": "npm-run-all" },
-      { "name": "preact" },
       { "name": "rimraf" },
       { "name": "ts-loader" },
       { "name": "ts-node" },
