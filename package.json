@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "boxen": "^7.0.0",
-    "chalk": "^5.1.2",
+    "chalk": "^5.2.0",
     "fs-extra": "^11.1.0",
     "inquirer": "^9.1.4",
     "package-json": "^8.1.0",
@@ -43,15 +43,15 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^9.0.3",
-    "@types/node": "^18.11.11",
+    "@types/node": "^18.11.12",
     "@types/semver": "^7.3.13",
     "@types/yargs": "17.0.13",
-    "@typescript-eslint/eslint-plugin": "^5.45.1",
-    "@typescript-eslint/parser": "^5.45.1",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.4"
   }
 }
