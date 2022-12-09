@@ -20,10 +20,10 @@
       { "name": "electron" },
       { "name": "electronmon" },
       { "name": "html-webpack-plugin" },
+      { "name": "mini-css-extract-plugin" },
       { "name": "npm-run-all" },
       { "name": "rimraf" },
       { "name": "vue-loader" },
-      { "name": "vue-style-loader" },
       { "name": "wait-on" },
       { "name": "webpack" },
       { "name": "webpack-cli" }

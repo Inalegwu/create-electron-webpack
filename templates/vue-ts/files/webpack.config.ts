@@ -1,6 +1,7 @@
 import { Configuration, DefinePlugin } from "webpack";
 import { VueLoaderPlugin } from "vue-loader";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -34,7 +35,7 @@ const common: Configuration = {
       },
       {
         test: /\.css$/,
-        use: ["vue-style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(ico|png|svg|eot|woff?2?)$/,
@@ -70,6 +71,7 @@ const renderer: Configuration = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin(),
     new DefinePlugin({
       __VUE_OPTIONS_API__: false,
       __VUE_PROD_DEVTOOLS__: false,
