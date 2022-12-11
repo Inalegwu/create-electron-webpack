@@ -50,8 +50,6 @@ If the arguments are missing or invalid, the command will fall back to interacti
 | `--version`, `-v`  | Show version number                                        |
 | `--help`           | Show help                                                  |
 
-_NOTE: `Yarn@v2 or later` is NOT supported._
-
 ## :hammer_and_wrench: Development & Production
 
 ```sh
