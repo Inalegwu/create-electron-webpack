@@ -49,6 +49,14 @@ export const init = async (projectName: string, options: Options) => {
   // copy files
   copySync(path.join(templateDir, "files"), projectDir);
 
+  // copy `yarnrc.yml` to `${projectDir}/.yarnrc.yml`
+  if (manager === "yarn") {
+    copySync(
+      path.join(templateDir, "yarnrc.yml"),
+      path.join(projectDir, ".yarnrc.yml")
+    );
+  }
+
   // rename `gitignore` to `.gitignore`.
   const gitignorePath = path.join(projectDir, "gitignore");
   if (fs.existsSync(gitignorePath)) {
