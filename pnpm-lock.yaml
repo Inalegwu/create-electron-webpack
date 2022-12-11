@@ -3,9 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@types/fs-extra': ^9.0.13
   '@types/inquirer': ^9.0.3
-  '@types/node': ^18.11.12
+  '@types/node': ^18.11.13
   '@types/semver': ^7.3.13
-  '@types/yargs': 17.0.13
+  '@types/yargs': 17.0.17
   '@typescript-eslint/eslint-plugin': ^5.46.0
   '@typescript-eslint/parser': ^5.46.0
   boxen: ^7.0.0
@@ -35,9 +35,9 @@ dependencies:
 devDependencies:
   '@types/fs-extra': 9.0.13
   '@types/inquirer': 9.0.3
-  '@types/node': 18.11.12
+  '@types/node': 18.11.13
   '@types/semver': 7.3.13
-  '@types/yargs': 17.0.13
+  '@types/yargs': 17.0.17
   '@typescript-eslint/eslint-plugin': 5.46.0_5mle7isnkfgjmrghnnczirv6iy
   '@typescript-eslint/parser': 5.46.0_ha6vam6werchizxrnqvarmz2zu
   eslint: 8.29.0
@@ -136,7 +136,7 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 18.11.12
+      '@types/node': 18.11.13
     dev: true
 
   /@types/http-cache-semantics/4.0.1:
@@ -154,8 +154,8 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
-  /@types/node/18.11.12:
-    resolution: {integrity: sha512-FgD3NtTAKvyMmD44T07zz2fEf+OKwutgBCEVM8GcvMGVGaDktiLNTDvPwC/LUe3PinMW+X6CuLOF2Ui1mAlSXg==}
+  /@types/node/18.11.13:
+    resolution: {integrity: sha512-IASpMGVcWpUsx5xBOrxMj7Bl8lqfuTY7FKAnPmu5cHkfQVWF8GulWS1jbRqA934qZL35xh5xN/+Xe/i26Bod4w==}
     dev: true
 
   /@types/semver/7.3.13:
@@ -165,15 +165,15 @@ packages:
   /@types/through/0.0.30:
     resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
     dependencies:
-      '@types/node': 18.11.12
+      '@types/node': 18.11.13
     dev: true
 
   /@types/yargs-parser/21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
     dev: true
 
-  /@types/yargs/17.0.13:
-    resolution: {integrity: sha512-9sWaruZk2JGxIQU+IhI1fhPYRcQ0UuTNuKuCW9bR5fp7qi2Llf7WDzNa17Cy7TKnh3cdxDOiyTu6gaLS0eDatg==}
+  /@types/yargs/17.0.17:
+    resolution: {integrity: sha512-72bWxFKTK6uwWJAVT+3rF6Jo6RTojiJ27FQo8Rf60AL+VZbzoVPnMFhKsUnbjR8A3BTCYQ7Mv3hnl8T0A+CX9g==}
     dependencies:
       '@types/yargs-parser': 21.0.0
     dev: true
