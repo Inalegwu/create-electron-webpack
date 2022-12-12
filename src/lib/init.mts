@@ -74,6 +74,9 @@ export const init = async (projectName: string, options: Options) => {
     version: "0.1.0",
     author: await username(),
     license: "MIT",
+    repository: {
+      url: `https://github.com/${await username()}/${projectName}.git`,
+    },
     main: templateJson.package.main,
     scripts: { ...templateJson.package.scripts },
     electronmon: templateJson.package.electronmon,
