@@ -72,8 +72,10 @@ export const init = async (projectName: string, options: Options) => {
     name: projectName,
     description: projectName,
     version: "0.1.0",
-    author: await username(),
     license: "MIT",
+    author: {
+      name: await username(),
+    },
     repository: {
       url: `https://github.com/${await username()}/${projectName}.git`,
     },
