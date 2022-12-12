@@ -20,6 +20,7 @@ const common: Configuration = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
+        // https://github.com/vuejs/vue-loader/issues/1915
         loader: "babel-loader",
         options: {
           presets: [
