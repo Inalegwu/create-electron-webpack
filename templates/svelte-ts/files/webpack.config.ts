@@ -16,10 +16,6 @@ const common: Configuration = {
     extensions: [".mjs", ".js", ".ts", ".svelte", ".json"],
     mainFields: ["svelte", "browser", "module", "main"],
   },
-  output: {
-    publicPath: "./",
-    assetModuleFilename: "assets/[name][ext]",
-  },
   module: {
     rules: [
       {

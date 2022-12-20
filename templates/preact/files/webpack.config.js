@@ -17,10 +17,6 @@ const common = {
       "react/jsx-runtime": "preact/jsx-runtime",
     },
   },
-  output: {
-    publicPath: "./",
-    assetModuleFilename: "assets/[name][ext]",
-  },
   module: {
     rules: [
       {

@@ -12,10 +12,6 @@ const common = {
   resolve: {
     extensions: [".js", ".vue", ".json"],
   },
-  output: {
-    publicPath: "./",
-    assetModuleFilename: "assets/[name][ext]",
-  },
   module: {
     rules: [
       {

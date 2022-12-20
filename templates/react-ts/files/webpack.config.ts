@@ -10,10 +10,6 @@ const common: Configuration = {
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
   },
-  output: {
-    publicPath: "./",
-    assetModuleFilename: "assets/[name][ext]",
-  },
   module: {
     rules: [
       {

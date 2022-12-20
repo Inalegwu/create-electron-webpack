@@ -10,10 +10,6 @@ const common = {
   resolve: {
     extensions: [".js", ".jsx", ".json"],
   },
-  output: {
-    publicPath: "./",
-    assetModuleFilename: "assets/[name][ext]",
-  },
   module: {
     rules: [
       {

@@ -15,10 +15,6 @@ const common = {
     extensions: [".mjs", ".js", ".svelte", ".json"],
     mainFields: ["svelte", "browser", "module", "main"],
   },
-  output: {
-    publicPath: "./",
-    assetModuleFilename: "assets/[name][ext]",
-  },
   module: {
     rules: [
       {
