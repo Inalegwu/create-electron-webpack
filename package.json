@@ -31,7 +31,7 @@
     "build": "rimraf dist && tsc"
   },
   "dependencies": {
-    "boxen": "^7.0.0",
+    "boxen": "^7.0.1",
     "chalk": "^5.2.0",
     "fs-extra": "^11.1.0",
     "inquirer": "^9.1.4",
@@ -43,12 +43,12 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^9.0.3",
-    "@types/node": "^18.11.13",
+    "@types/node": "^18.11.17",
     "@types/semver": "^7.3.13",
     "@types/yargs": "17.0.17",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
-    "eslint": "^8.29.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
