@@ -7,7 +7,6 @@
     "resolveJsonModule": true,
     "lib": ["DOM", "ESNext"],
     "jsx": "preserve",
-    "noEmit": true,
     "strict": true
   },
   "include": ["src"],

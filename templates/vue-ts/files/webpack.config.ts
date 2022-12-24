@@ -16,14 +16,11 @@ const common: Configuration = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        // https://github.com/vuejs/vue-loader/issues/1915
-        loader: "babel-loader",
+        loader: "ts-loader",
         options: {
-          presets: [
-            "@babel/preset-env",
-            "@babel/preset-typescript",
-            "babel-preset-typescript-vue3",
-          ],
+          // https://github.com/vuejs/vue-loader/issues/1915
+          ignoreDiagnostics: [7006],
+          appendTsSuffixTo: [/\.vue$/],
         },
       },
       {
@@ -70,7 +67,7 @@ const renderer: Configuration = {
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin(),
     new DefinePlugin({
-      __VUE_OPTIONS_API__: false,
+      __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false,
     }),
     new HtmlWebpackPlugin({
