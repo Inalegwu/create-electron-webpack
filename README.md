@@ -10,7 +10,7 @@ Yet another [create-electron-app](https://github.com/electron/forge#getting-star
 npx electron-starter
 ```
 
-![demo](https://user-images.githubusercontent.com/52094761/200512523-1d838b1b-3f22-4113-b87e-a8b54c861636.gif)
+![demo](https://user-images.githubusercontent.com/52094761/212503627-cf037feb-2679-48bd-9450-9bba9e8bedb5.gif)
 
 ## :thumbsup: Features
 
@@ -132,19 +132,17 @@ app.whenReady().then(() => {
 
 Use [electron-builder](https://www.electron.build/) or [electron-packager](https://electron.github.io/electron-packager/main/).
 
-_Sample script for electron-builder `builder.js`:_
-
 ```sh
 npm install --save-dev electron-builder
 ```
 
-Sample icons are available in the [assets](https://github.com/sprout2000/electron-starter/tree/main/assets) directory of this repository.
+_Sample script for electron-builder `builder.js`:_
 
 ```javascript
 require("electron-builder").build({
   config: {
     productName: "Electron App",
-    // e.g. "Electron App-1.0.0-win32.exe"
+    // File macros are available --> "Electron App-1.0.0-win32.exe"
     artifactName: "${productName}-${version}-${platform}.${ext}",
     copyright: "",
     /**
@@ -177,6 +175,8 @@ node ./builder.js
 ```
 
 <img width="640" alt="electron-builder" src="https://user-images.githubusercontent.com/52094761/201499630-59aa5eab-def6-4d2a-abb6-e4fb1c1077d9.png">
+
+Sample icons are available in the [assets](https://github.com/sprout2000/electron-starter/tree/main/assets) directory of this repository.
 
 ## :copyright: Copyright
 
