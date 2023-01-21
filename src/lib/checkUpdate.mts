@@ -1,12 +1,10 @@
-import fs from "node:fs";
 import boxen from "boxen";
 import chalk from "chalk";
 import semver from "semver";
 import pkgJson from "package-json";
 
-const loadJSON = (path: string) => {
-  return JSON.parse(fs.readFileSync(new URL(path, import.meta.url)).toString());
-};
+import { loadJSON } from "./loadJSON.mjs";
+
 const { name, version } = loadJSON("../../package.json");
 
 export const checkUpdate = async () => {

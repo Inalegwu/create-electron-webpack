@@ -1,16 +1,13 @@
-import fs from "fs";
 import path from "path";
 import yargs from "yargs";
 import chalk from "chalk";
 import inquirer, { QuestionCollection } from "inquirer";
 
 import { init } from "./lib/init.mjs";
+import { loadJSON } from "./lib/loadJSON.mjs";
 import { checkUpdate } from "./lib/checkUpdate.mjs";
 
-const loadJSON = (path: string) => {
-  return JSON.parse(fs.readFileSync(new URL(path, import.meta.url)).toString());
-};
-const pkgJson = loadJSON("../package.json");
+const pkgJson = loadJSON("../../package.json");
 
 const questions: QuestionCollection = [
   {
