@@ -1,13 +1,13 @@
-# :flight_departure: electron-starter
+# :flight_departure: create-electron-webpack
 
-![npm](https://img.shields.io/npm/dt/electron-starter)
+![npm](https://img.shields.io/npm/dt/create-electron-webpack)
 
 Yet another [create-electron-app](https://github.com/electron/forge#getting-started).
 
 ## :rocket: Getting Started
 
 ```sh
-npx electron-starter
+npx create-electron-webpack
 ```
 
 ![demo](https://user-images.githubusercontent.com/52094761/212503627-cf037feb-2679-48bd-9450-9bba9e8bedb5.gif)
@@ -15,19 +15,13 @@ npx electron-starter
 ## :thumbsup: Features
 
 - Supports hot reloading in both the main and renderer processes.
-- Available in [8 flavors](https://github.com/sprout2000/electron-starter#templates).
+- Available in [8 flavors](https://github.com/sprout2000/create-electron-webpack#templates).
 - No complicated pre-made settings.
-
-## :inbox_tray: Installation
-
-```sh
-npm i -g electron-starter
-```
 
 ## :green_book: Usage
 
 ```sh
-electron-starter <project-name> --template <template> [--manager <package manager>]
+create-electron-webpack <project-name> --template <template> [--manager <package manager>]
 ```
 
 If the arguments are missing or invalid, the command will fall back to interactive mode.
@@ -176,7 +170,7 @@ node ./builder.js
 
 <img width="640" alt="electron-builder" src="https://user-images.githubusercontent.com/52094761/201499630-59aa5eab-def6-4d2a-abb6-e4fb1c1077d9.png">
 
-Sample icons are available in the [assets](https://github.com/sprout2000/electron-starter/tree/main/assets) directory of this repository.
+Sample icons are available in the [assets](https://github.com/sprout2000/create-electron-webpack/tree/main/assets) directory of this repository.
 
 ## :copyright: Copyright
 

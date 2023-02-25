@@ -78,7 +78,7 @@ export const cli = async (rawArgs: string[]) => {
   const argv = yargs(slicedArgs)
     .version(false)
     .usage(
-      "\nUsage: electron-starter <project-name> --template <template> [--manager <package manager>]"
+      "\nUsage: create-electron-webpack <project-name> --template <template> [--manager <package manager>]"
     )
     .option("template", {
       type: "string",

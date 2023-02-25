@@ -1,7 +1,7 @@
 {
-  "name": "electron-starter",
+  "name": "create-electron-webpack",
   "description": "Yet another create-electron-app.",
-  "version": "2.1.3",
+  "version": "0.0.0",
   "license": "MIT",
   "author": "sprout2000",
   "keywords": [
@@ -13,15 +13,13 @@
     "template",
     "hot-reload"
   ],
-  "homepage": "https://github.com/sprout2000/electron-starter#readme",
+  "homepage": "https://github.com/sprout2000/create-electron-webpack#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sprout2000/electron-starter.git"
+    "url": "https://github.com/sprout2000/create-electron-webpack.git"
   },
   "type": "module",
-  "bin": {
-    "electron-starter": "bin/electron-starter.js"
-  },
+  "bin": "bin/cew.js",
   "files": [
     "bin",
     "dist",
