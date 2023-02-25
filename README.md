@@ -1,16 +1,21 @@
 # :flight_departure: create-electron-webpack
 
-![npm](https://img.shields.io/npm/dt/create-electron-webpack)
-
 Yet another [create-electron-app](https://github.com/electron/forge#getting-started).
 
 ## :rocket: Getting Started
 
 ```sh
-npx create-electron-webpack
+npm create electron-webpack
 ```
 
-![demo](https://user-images.githubusercontent.com/52094761/212503627-cf037feb-2679-48bd-9450-9bba9e8bedb5.gif)
+![demo](https://user-images.githubusercontent.com/52094761/221345883-5f9036ea-09f0-4ea2-ada7-adf622a91851.gif)
+
+And then...
+
+```sh
+cd your_project_dir
+npm run dev  # You can also 'pnpm dev' or 'yarn dev'
+```
 
 ## :thumbsup: Features
 
