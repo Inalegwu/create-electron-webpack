@@ -77,9 +77,6 @@ export const cli = async (rawArgs: string[]) => {
   const slicedArgs = rawArgs.slice(2);
   const argv = yargs(slicedArgs)
     .version(false)
-    .usage(
-      "\nUsage: create-electron-webpack <project-name> --template <template> [--manager <package manager>]"
-    )
     .option("template", {
       type: "string",
       alias: "t",
@@ -91,12 +88,6 @@ export const cli = async (rawArgs: string[]) => {
       alias: "m",
       description: "npm, pnpm, yarn",
     })
-    .option("version", {
-      type: "boolean",
-      alias: "v",
-      description: "Show version",
-    })
-    .help()
     .locale("en")
     .parseSync();
 
