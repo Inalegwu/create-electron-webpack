@@ -10,26 +10,29 @@ npm create electron-webpack
 
 ![demo](https://user-images.githubusercontent.com/52094761/221345883-5f9036ea-09f0-4ea2-ada7-adf622a91851.gif)
 
-And then...
+You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a React + TypeScript project, run:
 
 ```sh
-cd your_project_dir
-npm run dev  # You can also 'pnpm dev' or 'yarn dev'
+# npm 7+, extra double-dash is needed:
+npm create electron-webpack myapp -- --template react-ts
+
+# yarn, "-t" is the short hand for "--template"
+npm create electron-webpack myapp -- -t react-ts --manager yarn
+
+# pnpm, "-m" is the short hand for "--manager"
+npm create electron-webpack myapp -- -t react-ts -m pnpm
 ```
+
+_NOTE: If the arguments are missing or invalid, the command will fall back to interactive mode._
 
 ## :thumbsup: Features
 
 - Supports hot reloading in both the main and renderer processes.
 - Available in [8 flavors](https://github.com/sprout2000/create-electron-webpack#templates).
 - No complicated pre-made settings.
+- _NOT_ all-in-one, You can customize peripheral tools as you wish.
 
-## :green_book: Usage
-
-```sh
-create-electron-webpack <project-name> --template <template> [--manager <package manager>]
-```
-
-If the arguments are missing or invalid, the command will fall back to interactive mode.
+## :green_book: API
 
 ### Templates
 
@@ -40,14 +43,12 @@ If the arguments are missing or invalid, the command will fall back to interacti
 |  `svelte`  | `svelte-ts` |
 |  `preact`  | `preact-ts` |
 
-### Options
+### Command line options
 
 | option             | description                                                |
 | :----------------- | :--------------------------------------------------------- |
 | `--template`, `-t` | Select a template **(_required_)**                         |
 | `--manager`, `-m`  | Select a package manager: `npm`(_default_), `pnpm`, `yarn` |
-| `--version`, `-v`  | Show version number                                        |
-| `--help`           | Show help                                                  |
 
 ## :hammer_and_wrench: Development & Production
 
