@@ -8,7 +8,7 @@ Yet another [create-electron-app](https://github.com/electron/forge#getting-star
 npm create electron-webpack
 ```
 
-![demo](https://user-images.githubusercontent.com/52094761/221345883-5f9036ea-09f0-4ea2-ada7-adf622a91851.gif)
+![demo](https://user-images.githubusercontent.com/52094761/221401771-fe160bb3-b3ed-4a23-b162-c5e6c0451ae4.gif)
 
 You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a React + TypeScript project, run:
 
