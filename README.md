@@ -1,6 +1,6 @@
 # :flight_departure: create-electron-webpack
 
-Yet another [create-electron-app](https://github.com/electron/forge#getting-started).
+![preview](https://user-images.githubusercontent.com/52094761/222939566-6ae19d68-fa78-42ee-8a10-590c44fef71b.svg)
 
 ## :rocket: Getting Started
 
@@ -10,17 +10,13 @@ npm create electron-webpack
 
 ![demo](https://user-images.githubusercontent.com/52094761/221401771-fe160bb3-b3ed-4a23-b162-c5e6c0451ae4.gif)
 
-You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a React + TypeScript project, run:
+You can also directly specify the project name, the template, and the package manager you want to use via additional command line options.
+
+For example, to scaffold a React + TypeScript project, run:
 
 ```sh
-# npm 7+, extra double-dash is needed:
-npm create electron-webpack myapp -- --template react-ts
-
-# yarn, "-t" is the short hand for "--template"
-npm create electron-webpack myapp -- -t react-ts --manager yarn
-
-# pnpm, "-m" is the short hand for "--manager"
-npm create electron-webpack myapp -- -t react-ts -m pnpm
+# in the case of npm 7+, extra double-dash is needed:
+npm create electron-webpack myapp -- --template react-ts --manager pnpm
 ```
 
 _NOTE: If the arguments are missing or invalid, the command will fall back to interactive mode._
@@ -30,7 +26,6 @@ _NOTE: If the arguments are missing or invalid, the command will fall back to in
 - Supports hot reloading in both the main and renderer processes.
 - Available in [8 flavors](https://github.com/sprout2000/create-electron-webpack#templates).
 - No complicated pre-made settings.
-- _NOT_ all-in-one, You can customize peripheral tools as you wish.
 
 ## :green_book: API
 
