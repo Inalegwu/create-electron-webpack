@@ -15,6 +15,7 @@ const common: Configuration = {
     },
     extensions: [".mjs", ".js", ".ts", ".svelte", ".json"],
     mainFields: ["svelte", "browser", "module", "main"],
+    conditionNames: ["svelte"],
   },
   module: {
     rules: [
