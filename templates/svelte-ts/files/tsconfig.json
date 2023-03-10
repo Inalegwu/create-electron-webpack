@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "lib": ["DOM", "ESNext"],
-    "types": ["svelte"],
+    "types": ["svelte", "node"],
     "strict": true
   },
   "include": ["src"],
