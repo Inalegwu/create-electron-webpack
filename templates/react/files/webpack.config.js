@@ -7,6 +7,11 @@ const isDev = process.env.NODE_ENV === "development";
 const common = {
   mode: isDev ? "development" : "production",
   externals: ["fsevents"],
+  output: {
+    publicPath: "./",
+    filename: "[name].js",
+    assetModuleFilename: "assets/[name][ext]",
+  },
   resolve: {
     extensions: [".js", ".jsx", ".json"],
   },

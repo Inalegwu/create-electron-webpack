@@ -9,6 +9,11 @@ const isDev = process.env.NODE_ENV === "development";
 const common: Configuration = {
   mode: isDev ? "development" : "production",
   externals: ["fsevents"],
+  output: {
+    publicPath: "./",
+    filename: "[name].js",
+    assetModuleFilename: "assets/[name][ext]",
+  },
   resolve: {
     alias: {
       svelte: path.resolve("node_modules", "svelte"),
