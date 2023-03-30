@@ -99,7 +99,7 @@ And then, update your `webpack.config.(j|t)s`:
 
 ### :electric_plug: How to load developer tools?
 
-[electron-devtools-installer](https://www.npmjs.com/package/electron-devtools-installer) is recommended.
+[electron-devtools-assembler](https://www.npmjs.com/package/electron-devtools-assembler) is recommended.
 
 ```sh
 npm install --save-dev electron-devtools-installer
