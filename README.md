@@ -52,8 +52,60 @@ _NOTE: If the arguments are missing or invalid, the command will fall back to in
 % npm run dev
 
 # on production
-% npm run build && npm run package
+% npm run build
 ```
+
+## :package: How to package your app to share?
+
+Use [electron-builder](https://www.electron.build/).
+
+```sh
+npm install --save-dev electron-builder
+```
+
+Here's a sample script `builder.ts` for electron-builder:
+
+```typescript
+import { build } from "electron-builder";
+
+build({
+  config: {
+    appId: "com.Electron.ElectronApp",
+    productName: "Electron App",
+    artifactName: "${productName}-${version}-${platform}-${arch}.${ext}",
+    directories: {
+      output: "release",
+    },
+    files: [
+      "dist/**/*",
+      "!node_modules/@types/node",
+      "!node_modules/@types/react",
+      "!node_modules/@types/react-dom",
+      "!node_modules/cross-env",
+      "!node_modules/css-loader",
+      "!node_modules/electronmon",
+      "!node_modules/html-webpack-plugin",
+      "!node_modules/mini-css-extract-plugin",
+      "!node_modules/npm-run-all",
+      "!node_modules/rimraf",
+      "!node_modules/ts-loader",
+      "!node_modules/ts-node",
+      "!node_modules/typescript",
+      "!node_modules/wait-on",
+      "!node_modules/webpack",
+      "!node_modules/webpack-cli",
+    ],
+  },
+});
+```
+
+And then run the script above...
+
+```sh
+npx ts-node ./builder.ts
+```
+
+See [Common Configuration](https://www.electron.build/configuration/configuration) for more details.
 
 ### :cyclone: How to generate your own app icon?
 
@@ -102,12 +154,12 @@ And then, update your `webpack.config.(j|t)s`:
 [electron-devtools-assembler](https://www.npmjs.com/package/electron-devtools-assembler) is recommended.
 
 ```sh
-npm install --save-dev electron-devtools-installer
+npm install --save-dev electron-devtools-assembler
 ```
 
 ```javascript
 // Example for Vue3
-import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-installer";
+import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-assembler";
 
 app.whenReady().then(() => {
   installExtension(VUEJS3_DEVTOOLS, {
