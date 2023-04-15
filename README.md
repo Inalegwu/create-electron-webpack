@@ -149,27 +149,6 @@ And then, update your `webpack.config.(j|t)s`:
   },
 ```
 
-### :electric_plug: How to load developer tools?
-
-[electron-devtools-assembler](https://www.npmjs.com/package/electron-devtools-assembler) is recommended.
-
-```sh
-npm install --save-dev electron-devtools-assembler
-```
-
-```javascript
-// Example for Vue3
-import installExtension, { VUEJS3_DEVTOOLS } from "electron-devtools-assembler";
-
-app.whenReady().then(() => {
-  installExtension(VUEJS3_DEVTOOLS, {
-    loadExtensionOptions: { allowFileAccess: true },
-  }).then(() => mainWindow.webContents.openDevTools());
-});
-```
-
-<img width="480" alt="Vue.js devtools" src="https://user-images.githubusercontent.com/52094761/200508222-d0c851a4-d578-463f-8bd2-6d1e4bcb87bd.png">
-
 ## :copyright: Copyright
 
 Copyright (c) 2022 sprout2000
