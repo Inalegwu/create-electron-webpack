@@ -57,7 +57,7 @@ _NOTE: If the arguments are missing or invalid, the command will fall back to in
 
 ## :package: How to package your app to share?
 
-Use [electron-builder](https://www.electron.build/).
+[electron-builder](https://www.electron.build/) is recommended.
 
 ```sh
 npm install --save-dev electron-builder
@@ -107,7 +107,7 @@ npx ts-node ./builder.ts
 
 See [Common Configuration](https://www.electron.build/configuration/configuration) for more details.
 
-### :cyclone: How to generate your own app icon?
+## :cyclone: How to generate your own app icon?
 
 You can use [Elephicon](https://github.com/sprout2000/elephicon#readme) to generate Microsoft ICO or Apple ICNS from PNG files.
 
@@ -128,7 +128,7 @@ require("electron-builder").build({
 });
 ```
 
-### :art: How to use sass (`.scss`) in your project?
+## :art: How to use sass (`.scss`) in your project?
 
 You will need to add [sass](https://www.npmjs.com/package/sass) and [sass-loader](https://www.npmjs.com/package/sass-loader):
 
