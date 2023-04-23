@@ -26,7 +26,8 @@
     "templates"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
     "boxen": "^7.0.2",
@@ -41,6 +42,7 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@types/inquirer": "^9.0.3",
+    "@types/jest": "^29.5.1",
     "@types/node": "^18.15.11",
     "@types/semver": "^7.3.13",
     "@types/yargs": "17.0.24",
@@ -50,6 +52,7 @@
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.7",
     "rimraf": "^5.0.0",
+    "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   }
 }
