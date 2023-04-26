@@ -27,6 +27,8 @@ _NOTE: If the arguments are missing or invalid, the command will fall back to in
 - Available in [8 flavors](https://github.com/sprout2000/create-electron-webpack#templates).
 - No complicated pre-made settings.
 
+The template provided by this scaffold is _NOT_ an all-in-one. It provides only the necessary and sufficient settings so that you can customize it as you like.
+
 ## :green_book: API
 
 ### Templates
