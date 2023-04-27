@@ -35,7 +35,7 @@ The template provided by this scaffold is _NOT_ an all-in-one. It provides only 
 
 | JavaScript |  TypeScript  |
 | :--------: | :----------: |
-| `vanilla`  | `vaniall-ts` |
+| `vanilla`  | `vanilla-ts` |
 |  `react`   |  `react-ts`  |
 |   `vue`    |   `vue-ts`   |
 |  `svelte`  | `svelte-ts`  |
