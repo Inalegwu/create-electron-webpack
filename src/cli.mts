@@ -22,7 +22,7 @@ const questions: QuestionCollection = [
     type: "list",
     name: "template",
     message: "Select a framework:",
-    choices: ["react", "vue", "svelte", "preact"],
+    choices: ["vanilla", "react", "vue", "svelte", "preact"],
   },
   {
     type: "list",
@@ -40,6 +40,8 @@ const questions: QuestionCollection = [
 
 const validateTemplate = (template: string) => {
   const templates = [
+    "vanilla",
+    "vanilla-ts",
     "react",
     "react-ts",
     "vue",
