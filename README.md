@@ -24,7 +24,7 @@ _NOTE: If the arguments are missing or invalid, the command will fall back to in
 ## :thumbsup: Features
 
 - Supports hot reloading in both the main and renderer processes.
-- Available in [8 flavors](https://github.com/sprout2000/create-electron-webpack#templates).
+- Available in [10 flavors](https://github.com/sprout2000/create-electron-webpack#templates).
 - No complicated pre-made settings.
 
 The template provided by this scaffold is _NOT_ an all-in-one. It provides only the necessary and sufficient settings so that you can customize it as you like.
@@ -33,12 +33,13 @@ The template provided by this scaffold is _NOT_ an all-in-one. It provides only 
 
 ### Templates
 
-| JavaScript | TypeScript  |
-| :--------: | :---------: |
-|  `react`   | `react-ts`  |
-|   `vue`    |  `vue-ts`   |
-|  `svelte`  | `svelte-ts` |
-|  `preact`  | `preact-ts` |
+| JavaScript |  TypeScript  |
+| :--------: | :----------: |
+| `vanilla`  | `vaniall-ts` |
+|  `react`   |  `react-ts`  |
+|   `vue`    |   `vue-ts`   |
+|  `svelte`  | `svelte-ts`  |
+|  `preact`  | `preact-ts`  |
 
 ### Command line options
 
