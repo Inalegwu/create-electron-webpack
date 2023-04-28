@@ -96,10 +96,12 @@ export const init = async (projectName: string, options: Options) => {
   const dependencies = [...templateDeps].map(({ name }) => name);
   const devDependencies = [...templateDevDeps].map(({ name }) => name);
 
-  child_process.execSync(`${cmd} add ${dependencies.join(" ")}`, {
-    cwd: projectDir,
-    stdio: "inherit",
-  });
+  if (!template.includes("vanilla")) {
+    child_process.execSync(`${cmd} add ${dependencies.join(" ")}`, {
+      cwd: projectDir,
+      stdio: "inherit",
+    });
+  }
 
   child_process.execSync(`${cmd} add -D ${devDependencies.join(" ")}`, {
     cwd: projectDir,
