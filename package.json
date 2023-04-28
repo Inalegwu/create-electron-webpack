@@ -36,12 +36,12 @@
     "package-json": "^8.1.0",
     "semver": "^7.5.0",
     "username": "^6.0.0",
-    "yargs": "^17.7.1"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@types/inquirer": "^9.0.3",
-    "@types/node": "^18.16.1",
+    "@types/node": "^18.16.2",
     "@types/semver": "^7.3.13",
     "@types/yargs": "17.0.24",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
