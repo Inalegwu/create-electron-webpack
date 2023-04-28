@@ -8,7 +8,7 @@
 npm create electron-webpack
 ```
 
-![demo](https://user-images.githubusercontent.com/52094761/234801981-a3672499-7dc8-4927-a083-cef38805e942.gif)
+![demo](https://user-images.githubusercontent.com/52094761/235054397-982fe147-5377-4cf5-bf43-31e3f859511d.gif)
 
 You can also directly specify the project name, the template, and the package manager you want to use via additional command line options.
 
