@@ -90,6 +90,7 @@ export const cli = async (rawArgs: string[]) => {
       alias: "m",
       description: "npm, pnpm, yarn",
     })
+    .help()
     .locale("en")
     .parseSync();
 
