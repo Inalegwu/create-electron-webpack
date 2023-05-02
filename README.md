@@ -19,6 +19,12 @@ For example, to scaffold a React + TypeScript project, run:
 npm create electron-webpack myapp -- --template react-ts --manager pnpm
 ```
 
+_or if you prefer Yarn:_
+
+```sh
+yarn create electron-webpack your_app -t vue -m yarn
+```
+
 _NOTE: If the arguments are missing or invalid, the command will fall back to interactive mode._
 
 ## :thumbsup: Features
