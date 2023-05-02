@@ -152,6 +152,16 @@ And then, update your `webpack.config.(j|t)s`:
   },
 ```
 
+# :camera_flash: Screen shots
+
+### Hot reload in renderer process
+
+<img width="800" src="https://user-images.githubusercontent.com/52094761/235551732-a69ba9d5-db95-4101-9b79-e2741f8050dc.gif" />
+
+### Hot reload in main process
+
+<img width="800" src="https://user-images.githubusercontent.com/52094761/235551746-490c7b46-8d34-45a8-bd96-9afb0d37cb61.gif" />
+
 ## :copyright: Copyright
 
 Copyright (c) 2022 sprout2000
