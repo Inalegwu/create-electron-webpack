@@ -15,11 +15,11 @@ const common = {
   },
   resolve: {
     alias: {
-      svelte: path.resolve("node_modules", "svelte"),
+      svelte: path.resolve("node_modules", "svelte/src/runtime"),
     },
     extensions: [".mjs", ".js", ".svelte", ".json"],
     mainFields: ["svelte", "browser", "module", "main"],
-    conditionNames: ["svelte"],
+    conditionNames: ["svelte", "browser", "import"],
   },
   module: {
     rules: [
