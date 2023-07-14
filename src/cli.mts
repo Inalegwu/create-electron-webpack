@@ -65,8 +65,8 @@ const print = (dir: string, manager?: string) => {
 
   console.log(
     `\nScaffolding project in ${chalk.cyan(
-      `${path.resolve(process.cwd(), dir)}`,
-    )}`,
+      `${path.resolve(process.cwd(), dir)}`
+    )}`
   );
   console.log("\nDone. Now run:");
   console.log(`\n  cd ${dir}`);
@@ -113,7 +113,7 @@ export const cli = async (rawArgs: string[]) => {
         : `${result.template}-ts`;
 
     init(result.project, { template, manager }).then(() =>
-      print(result.project, manager),
+      print(result.project, manager)
     );
   } else {
     const template = argv.template;
