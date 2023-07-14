@@ -17,7 +17,7 @@ export const checkUpdate = async () => {
       updateAvailable: `Update available! ${chalk.dim(version)} → ${chalk.green(
         latestVersion,
       )}`,
-      runUpdate: `Run ${chalk.cyan(`npm i -g ${name}`)} to update.`,
+      runUpdate: `Run ${chalk.cyan("npx clear-npx-cache")} to update.`,
     };
 
     console.log(
