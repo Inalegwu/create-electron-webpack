@@ -29,8 +29,8 @@ export const init = async (projectName: string, options: Options) => {
   if (fs.existsSync(projectDir)) {
     console.error(
       `\n${chalk.red(
-        `"${path.basename(projectDir)}" directory already exists.`
-      )}`
+        `"${path.basename(projectDir)}" directory already exists.`,
+      )}`,
     );
     throw new Error(`already exists.`);
   } else {
@@ -43,7 +43,7 @@ export const init = async (projectName: string, options: Options) => {
     throw new Error(`Template "${template}" not found.`);
   }
   const templateJson = JSON.parse(
-    fs.readFileSync(path.join(templateDir, "template.json"), "utf8")
+    fs.readFileSync(path.join(templateDir, "template.json"), "utf8"),
   );
 
   // copy files
@@ -53,7 +53,7 @@ export const init = async (projectName: string, options: Options) => {
   if (manager === "yarn") {
     copySync(
       path.join(templateDir, "yarnrc.yml"),
-      path.join(projectDir, ".yarnrc.yml")
+      path.join(projectDir, ".yarnrc.yml"),
     );
   }
 
@@ -86,7 +86,7 @@ export const init = async (projectName: string, options: Options) => {
 
   fs.writeFileSync(
     path.join(projectDir, "package.json"),
-    JSON.stringify(packageJson, null, "\t")
+    JSON.stringify(packageJson, null, "\t"),
   );
 
   // install dependencies

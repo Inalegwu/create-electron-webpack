@@ -15,7 +15,7 @@ export const checkUpdate = async () => {
   if (updateAvailable) {
     const msg = {
       updateAvailable: `Update available! ${chalk.dim(version)} → ${chalk.green(
-        latestVersion
+        latestVersion,
       )}`,
       runUpdate: `Run ${chalk.cyan("npx clear-npx-cache")} to update.`,
     };
@@ -25,7 +25,7 @@ export const checkUpdate = async () => {
         margin: 1,
         padding: 1,
         align: "center",
-      })
+      }),
     );
   }
 };
