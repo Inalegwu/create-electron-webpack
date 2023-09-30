@@ -1,5 +1,7 @@
 # :flight_departure: create-electron-webpack
 
+Yet another create-electron-app.
+
 ![preview](https://user-images.githubusercontent.com/52094761/222939566-6ae19d68-fa78-42ee-8a10-590c44fef71b.svg)
 
 ## :rocket: Getting Started
