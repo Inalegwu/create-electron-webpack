@@ -28,7 +28,6 @@
       { "name": "mini-css-extract-plugin" },
       { "name": "npm-run-all" },
       { "name": "rimraf" },
-      { "name": "ts-loader" },
       { "name": "ts-node" },
       { "name": "typescript" },
       { "name": "wait-on" },
