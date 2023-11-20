@@ -14,7 +14,7 @@
     "devDependencies": [
       { "name": "@babel/core" },
       { "name": "@babel/preset-env" },
-      { "name": "@babel/preset-react" },
+      { "name": "babel-preset-solid" },
       { "name": "babel-loader" },
       { "name": "cross-env" },
       { "name": "css-loader" },
