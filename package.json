@@ -9,6 +9,7 @@
     "react",
     "vue",
     "svelte",
+    "solid-js",
     "typescript",
     "template",
     "hot-reload"

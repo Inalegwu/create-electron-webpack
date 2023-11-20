@@ -22,7 +22,7 @@ const questions: QuestionCollection = [
     type: "list",
     name: "template",
     message: "Select a framework:",
-    choices: ["vanilla", "react", "vue", "svelte", "preact"],
+    choices: ["vanilla", "react", "vue", "svelte", "preact", "solid"],
   },
   {
     type: "list",
@@ -50,6 +50,8 @@ const validateTemplate = (template: string) => {
     "svelte-ts",
     "preact",
     "preact-ts",
+    "solid",
+    "solid-ts",
   ];
 
   return templates.includes(template);
@@ -65,8 +67,8 @@ const print = (dir: string, manager?: string) => {
 
   console.log(
     `\nScaffolding project in ${chalk.cyan(
-      `${path.resolve(process.cwd(), dir)}`,
-    )}`,
+      `${path.resolve(process.cwd(), dir)}`
+    )}`
   );
   console.log("\nDone. Now run:");
   console.log(`\n  cd ${dir}`);
@@ -83,7 +85,7 @@ export const cli = async (rawArgs: string[]) => {
       type: "string",
       alias: "t",
       description:
-        "react, react-ts, vue, vue-ts, svelte, svelte-ts, preact, preact-ts",
+        "react, react-ts, vue, vue-ts, svelte, svelte-ts, preact, preact-ts, solid, solid-ts",
     })
     .option("manager", {
       type: "string",
@@ -113,7 +115,7 @@ export const cli = async (rawArgs: string[]) => {
         : `${result.template}-ts`;
 
     init(result.project, { template, manager }).then(() =>
-      print(result.project, manager),
+      print(result.project, manager)
     );
   } else {
     const template = argv.template;
