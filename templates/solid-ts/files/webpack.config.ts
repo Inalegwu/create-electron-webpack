@@ -24,11 +24,17 @@ const common: Configuration = {
           {
             loader: "babel-loader",
             options: {
-              presets: "solid",
+              presets: [
+                "@babel/preset-env",
+                "solid",
+                "@babel/preset-typescript",
+              ],
+              plugins: [
+                "@babel/plugin-syntax-dynamic-import",
+                "@babel/plugin-proposal-class-properties",
+                "@babel/plugin-proposal-object-rest-spread",
+              ],
             },
-          },
-          {
-            loader: "ts-loader",
           },
         ],
       },
