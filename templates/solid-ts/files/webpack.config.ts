@@ -20,7 +20,17 @@ const common: Configuration = {
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: "ts-loader",
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: "solid",
+            },
+          },
+          {
+            loader: "ts-loader",
+          },
+        ],
       },
       {
         test: /\.css$/,

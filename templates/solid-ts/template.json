@@ -17,6 +17,8 @@
       { "name": "@types/react-dom" },
       { "name": "cross-env" },
       { "name": "css-loader" },
+      { "name": "babel-preset-solid" },
+      { "name": "babel-loader" },
       { "name": "electron" },
       { "name": "electronmon" },
       { "name": "html-webpack-plugin" },
